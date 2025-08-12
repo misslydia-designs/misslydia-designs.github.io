@@ -22,39 +22,60 @@ UPDATING TEXT CONTENT:
 - Modify the facts list (Year, Tools, Dimensions) as needed
 -->
 
+<!-- DOCTYPE tells the browser this is an HTML5 document -->
 <!DOCTYPE html>
+<!-- The html tag wraps all content on the page. lang="en" tells screen readers this is in English -->
 <html lang="en">
+<!-- The head section contains information about the page that doesn't show up on screen -->
 <head>
+    <!-- charset tells the browser how to read the text characters -->
     <meta charset="utf-8">
+    <!-- viewport makes the page look good on mobile devices by controlling zoom and scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The title shows up in the browser tab -->
     <title>Concept Art • Katelyn Lydia</title>
 
-    <!-- Google Fonts: Poppins for headings, Inter for body text -->
+    <!-- Google Fonts: These load custom fonts from Google's servers -->
+    <!-- preconnect speeds up the font loading by connecting to Google's servers early -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- This loads Poppins font (for headings) and Inter font (for body text) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Main stylesheet -->
+    <!-- Link to our main CSS file that controls how everything looks -->
     <link rel="stylesheet" href="/assets/css/style.css">
 
-    <!-- Favicon -->
+    <!-- Favicon is the small icon that shows up in the browser tab -->
     <link rel="icon" type="image/png" href="/assets/images/logo.png">
 </head>
+<!-- The body contains all the content that visitors can see -->
 <body>
-    <!-- Consistent Site Header -->
+    <!-- Header section: This appears at the top of every page -->
+    <!-- role="banner" helps screen readers understand this is the main header -->
     <header class="site-header" role="banner">
+        <!-- container class centers the content and adds consistent spacing -->
         <div class="container">
             <div class="header-content">
+                <!-- Logo section: Contains the site logo and name -->
                 <div class="logo-section">
+                    <!-- This link takes users back to the home page when clicked -->
                     <a href="/index.html" class="logo-link">
+                        <!-- Site logo image -->
                         <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
+                        <!-- Site name as a heading -->
                         <h1 class="site-name">Katelyn Lydia</h1>
                     </a>
                 </div>
 
+                <!-- Mobile menu button: Only shows on small screens -->
+                <!-- aria-controls tells screen readers what this button controls -->
+                <!-- aria-expanded="false" indicates the menu starts closed -->
                 <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false" aria-label="Open navigation menu">
                     <span class="menu-text">Menu</span>
+                    <!-- SVG is a type of image made with code - this draws a hamburger menu icon -->
+                    <!-- aria-hidden="true" tells screen readers to ignore this decorative icon -->
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <!-- This draws three horizontal lines for the hamburger menu -->
                         <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </button>
@@ -62,52 +83,76 @@ UPDATING TEXT CONTENT:
         </div>
     </header>
 
-    <!-- Slide-out Menu -->
+    <!-- Navigation menu: This slides out on mobile devices -->
+    <!-- role="navigation" tells screen readers this is for navigation -->
+    <!-- aria-hidden="true" means it starts hidden -->
     <nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
+        <!-- Overlay: The dark background behind the menu -->
         <div class="slide-menu-overlay"></div>
+        <!-- Menu content: The actual menu items -->
         <div class="slide-menu-content">
+            <!-- Close button for the mobile menu -->
             <button class="menu-close" aria-label="Close navigation menu">
+                <!-- X icon made with SVG -->
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <!-- This draws an X shape -->
                     <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </button>
+            <!-- List of navigation links -->
             <ul class="menu-links">
+                <!-- Each li (list item) contains a navigation link -->
                 <li><a href="/index.html" class="menu-link">Home</a></li>
                 <li><a href="/projects.html" class="menu-link">Projects</a></li>
                 <li><a href="/about.html" class="menu-link">About</a></li>
+                <!-- aria-current="page" tells screen readers this is the current page -->
                 <li><a href="/concept-art.html" class="menu-link" aria-current="page">Concept Art</a></li>
                 <li><a href="/showreel.html" class="menu-link">Showreels</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Main content area: Contains all the page-specific content -->
     <main>
-        <!-- Page Header Section -->
+        <!-- Page header: The title and description at the top -->
         <section class="page-header">
             <div class="container">
+                <!-- Main page title -->
                 <h1 class="page-title">Concept Art</h1>
+                <!-- Brief description of what's on this page -->
                 <p class="page-intro">A collection of concept art pieces showcasing creative exploration across various projects. Each piece represents a unique approach to visual storytelling and design development.</p>
             </div>
         </section>
 
-        <!-- Concept Art Gallery Section -->
+        <!-- Gallery section: Contains all the concept art pieces -->
         <section class="gallery-section">
             <div class="container">
+                <!-- Gallery grid: This arranges the art pieces in a responsive grid -->
                 <div class="gallery">
 
-                    <!-- Temporary SVG placeholders – replace src with final images when ready -->
+                    <!-- Note: These are temporary SVG placeholders – replace src with final images when ready -->
 
-                    <!-- Art Item 1 -->
+                    <!-- Art Item 1: Each art piece is wrapped in an article tag -->
+                    <!-- article tag represents a complete, independent piece of content -->
                     <article class="art-item">
+                        <!-- figure tag groups an image with its caption -->
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-01.svg"
+                            <!-- The actual artwork image -->
+                            <!-- class="art-thumb" is used by JavaScript to detect clickable images -->
+                            <!-- loading="lazy" means the image only loads when it's about to be seen (saves bandwidth) -->
+                            <!-- decoding="async" improves page performance -->
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-01.svg"
                                  alt="Fantasy landscape concept featuring mystical mountains and ethereal lighting"
                                  loading="lazy"
                                  decoding="async">
                         </figure>
+                        <!-- Text information about the artwork -->
                         <div class="art-meta">
+                            <!-- Artwork title -->
                             <h3>Mystic Peaks</h3>
+                            <!-- Description of the artwork -->
                             <p>An atmospheric landscape concept exploring otherworldly terrain and dramatic lighting effects. This piece focuses on creating depth through layered mountains and mystical fog elements.</p>
+                            <!-- Technical details about the artwork -->
                             <ul class="art-facts">
                                 <li>Year: 2025</li>
                                 <li>Tools: Procreate / Photoshop</li>
@@ -119,7 +164,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 2 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-02.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-02.svg"
                                  alt="Futuristic cityscape with towering architecture and neon lighting"
                                  loading="lazy"
                                  decoding="async">
@@ -138,7 +183,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 3 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-03.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-03.svg"
                                  alt="Character design featuring a mystical forest guardian with intricate details"
                                  loading="lazy"
                                  decoding="async">
@@ -157,7 +202,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 4 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-04.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-04.svg"
                                  alt="Steampunk airship design with mechanical details and brass elements"
                                  loading="lazy"
                                  decoding="async">
@@ -176,7 +221,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 5 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-05.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-05.svg"
                                  alt="Underwater ruins with bioluminescent creatures and ancient architecture"
                                  loading="lazy"
                                  decoding="async">
@@ -195,7 +240,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 6 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-06.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-06.svg"
                                  alt="Space station interior with sleek technology and atmospheric lighting"
                                  loading="lazy"
                                  decoding="async">
@@ -214,7 +259,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 7 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-07.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-07.svg"
                                  alt="Medieval town square with market stalls and period architecture"
                                  loading="lazy"
                                  decoding="async">
@@ -233,7 +278,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 8 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-08.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-08.svg"
                                  alt="Alien creature design with unique anatomical features and textures"
                                  loading="lazy"
                                  decoding="async">
@@ -252,7 +297,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 9 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-09.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-09.svg"
                                  alt="Post-apocalyptic vehicle design with salvaged parts and weathered details"
                                  loading="lazy"
                                  decoding="async">
@@ -271,7 +316,7 @@ UPDATING TEXT CONTENT:
                     <!-- Art Item 10 -->
                     <article class="art-item">
                         <figure class="art-media">
-                            <img src="/assets/images/concept-art-images/placeholder-10.svg"
+                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-10.svg"
                                  alt="Magical academy interior with floating books and mystical elements"
                                  loading="lazy"
                                  decoding="async">
@@ -287,18 +332,43 @@ UPDATING TEXT CONTENT:
                         </div>
                     </article>
 
-                </div>
-            </div>
-        </section>
+                </div> <!-- End of gallery -->
+            </div> <!-- End of container -->
+        </section> <!-- End of gallery-section -->
     </main>
 
+    <!-- Lightbox: This is a popup that shows larger versions of images when clicked -->
+    <!-- It starts hidden and only appears when an image is clicked -->
+    <!-- aria-hidden="true" tells screen readers to ignore it when it's closed -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <!-- Overlay: The dark background behind the popup -->
+        <!-- data-lightbox-close means clicking here will close the lightbox -->
+        <div class="lightbox__overlay" data-lightbox-close></div>
+        <!-- Content: The actual popup box -->
+        <!-- role="document" tells screen readers this is a distinct document -->
+        <div class="lightbox__content" role="document">
+            <!-- Close button with an X symbol -->
+            <!-- &times; creates the × symbol -->
+            <button class="lightbox__close" type="button" aria-label="Close image" data-lightbox-close>&times;</button>
+            <!-- The large version of the clicked image will appear here -->
+            <img class="lightbox__img" alt="">
+            <!-- Caption showing the image description -->
+            <p class="lightbox__caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Footer: Copyright information at the bottom -->
+    <!-- role="contentinfo" tells screen readers this is footer information -->
     <footer class="contact-footer" role="contentinfo">
         <div class="container">
             <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for mobile navigation toggle -->
+    <!-- JavaScript files: These add interactive functionality -->
+    <!-- header.js handles the mobile menu opening/closing -->
     <script src="/assets/js/header.js"></script>
+    <!-- lightbox.js handles clicking on images to open them in a popup -->
+    <script src="/assets/js/lightbox.js"></script>
 </body>
 </html>
