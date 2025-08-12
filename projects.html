@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/assets/images/logo.png">
 </head>
 <body>
-    <!-- Consistent Site Header -->
+    <!-- Header section: Same consistent header used across all pages -->
     <header class="site-header" role="banner">
         <div class="container">
             <div class="header-content">
@@ -32,7 +32,7 @@
         </div>
     </header>
 
-    <!-- Slide-out Menu -->
+    <!-- Slide-out Menu: Mobile navigation menu -->
     <nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
         <div class="slide-menu-overlay"></div>
         <div class="slide-menu-content">
@@ -43,6 +43,7 @@
             </button>
             <ul class="menu-links">
                 <li><a href="/index.html" class="menu-link">Home</a></li>
+                <!-- aria-current="page" indicates this is the current page for screen readers -->
                 <li><a href="/projects.html" class="menu-link" aria-current="page">Projects</a></li>
                 <li><a href="/about.html" class="menu-link">About</a></li>
                 <li><a href="/concept-art.html" class="menu-link">Concept Art</a></li>
@@ -51,21 +52,42 @@
         </div>
     </nav>
 
+    <!-- Main content area -->
     <main>
+        <!-- Projects section: Contains the heading, intro text, and grid -->
         <section class="projects-section">
             <div class="container">
+                <!-- Page title -->
                 <h1>Projects</h1>
-                <p>Coming Soon</p>
+
+                <!-- Introduction text -->
+                <p class="projects-intro">
+                    A collection of design and development projects showcasing various skills and creative approaches.
+                    Each project represents a unique challenge and solution.
+                </p>
+
+                <!-- Projects grid container: This starts empty and JavaScript will fill it with project cards -->
+                <!-- aria-live="polite" tells screen readers to announce when content changes -->
+                <div id="projects-grid" class="projects-grid" aria-live="polite">
+                    <!-- JavaScript will inject project cards here automatically -->
+                    <!-- The cards are loaded from /assets/data/projects.json -->
+                    <!-- If you don't see any projects, run: npm run build:projects -->
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer: Copyright information -->
     <footer class="contact-footer" role="contentinfo">
         <div class="container">
             <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="assets/js/header.js"></script>
+    <!-- JavaScript files: These add interactive functionality -->
+    <!-- header.js handles the mobile menu opening/closing -->
+    <script src="/assets/js/header.js"></script>
+    <!-- projects-loader.js loads the project cards from JSON data -->
+    <script src="/assets/js/projects-loader.js"></script>
 </body>
 </html>

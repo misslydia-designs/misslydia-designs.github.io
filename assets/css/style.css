@@ -942,3 +942,110 @@ Mobile-first: stacked layout → desktop: side-by-side image/text
 /* Prevent background scrolling when lightbox is open */
 /* This class is added to the html element by JavaScript */
 .no-scroll { overflow: hidden !important; }
+
+/* ===== PROJECTS GRID (JSON-DRIVEN, AUTO-MATCHED) ===== */
+/* These styles control the automated projects page layout */
+
+/* Main projects section container */
+.projects-section {
+  padding: var(--space-3xl) 0; /* Large vertical spacing */
+  background: var(--white); /* White background */
+}
+
+/* Projects page title */
+.projects-section h1 {
+  font-family: var(--font-heading); /* Use heading font (Poppins) */
+  font-size: var(--text-3xl); /* Large text size */
+  color: var(--leaf-dark); /* Dark green color */
+  text-align: center; /* Center the heading */
+  margin-bottom: var(--space-md); /* Space below heading */
+}
+
+/* Introduction text below the title */
+.projects-intro {
+  text-align: center; /* Center the text */
+  color: var(--leaf-dark); /* Dark green color */
+  opacity: .9; /* Slightly transparent for softer appearance */
+  margin-bottom: var(--space-xl); /* Large space below intro */
+}
+
+/* Projects grid layout: Responsive grid that adjusts to screen size */
+.projects-grid {
+  display: grid; /* Use CSS Grid layout */
+  gap: var(--space-xl); /* Space between cards */
+  grid-template-columns: 1fr; /* Start with 1 column on mobile */
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 480px){
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Small desktop: 3 columns */
+@media (min-width: 768px){
+  .projects-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* Large desktop: 4 columns maximum */
+@media (min-width:1024px){
+  .projects-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+}
+
+/* Individual project card: The clickable container for each project */
+.project-card {
+  display: block; /* Makes entire card clickable */
+  background: var(--white); /* White background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(63,110,58,0.08); /* Subtle shadow for depth */
+  overflow: hidden; /* Clips content to rounded corners */
+  text-decoration: none; /* Removes default link underline */
+  color: var(--leaf-dark); /* Dark green text color */
+  transition: transform .2s, box-shadow .2s; /* Smooth hover animation */
+}
+
+/* Hover effect: Lift card when mouse is over it */
+.project-card:hover {
+  transform: translateY(-4px); /* Move up by 4 pixels */
+  box-shadow: 0 8px 32px rgba(63,110,58,0.12); /* Stronger shadow */
+}
+
+/* Focus effect for keyboard navigation */
+.project-card:focus-visible {
+  outline: 3px solid var(--berry); /* Pink outline for accessibility */
+  outline-offset: 2px; /* Space between outline and card */
+}
+
+/* Project thumbnail container: Holds the project image */
+.project-thumb {
+  aspect-ratio: 16/9; /* Consistent rectangular shape (16:9 ratio) */
+  background: var(--sand); /* Light beige background if image fails to load */
+  overflow: hidden; /* Clips image to container shape */
+}
+
+/* Project thumbnail image */
+.project-thumb img {
+  width: 100%; /* Fill container width */
+  height: 100%; /* Fill container height */
+  object-fit: cover; /* Crop image to fit without distortion */
+  display: block; /* Remove default inline spacing */
+}
+
+/* Project text information container */
+.project-meta {
+  padding: var(--space-md); /* Medium padding around text */
+}
+
+/* Project title */
+.project-title {
+  font-family: var(--font-heading); /* Use heading font (Poppins) */
+  font-size: var(--text-lg); /* Large text size */
+  font-weight: 600; /* Semi-bold weight */
+  margin: 0 0 var(--space-xs); /* Small margin below title */
+}
+
+/* Project description text */
+.project-desc {
+  font-size: var(--text-sm); /* Small text size */
+  opacity: .9; /* Slightly transparent for softer appearance */
+  margin: 0; /* No margins (handled by container padding) */
+}

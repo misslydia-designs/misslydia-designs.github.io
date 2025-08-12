@@ -1,0 +1,13 @@
+{
+  "name": "misslydia-designs-portfolio",
+  "version": "1.0.0",
+  "description": "Katelyn Lydia's portfolio website with automated project management",
+  "scripts": {
+    "build:projects": "node ./tools/build-projects-manifest.mjs"
+  },
+  "type": "module",
+  "keywords": ["portfolio", "design", "projects"],
+  "author": "Katelyn Lydia",
+  "license": "MIT"
+}
+
