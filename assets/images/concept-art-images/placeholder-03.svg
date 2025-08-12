@@ -1,0 +1,13 @@
+<svg viewBox="0 0 2500 3500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Background with third brand color -->
+  <rect width="2500" height="3500" fill="#7A0E2B"/>
+
+  <!-- Subtle wave pattern for visual interest -->
+  <defs>
+    <pattern id="waves3" patternUnits="userSpaceOnUse" width="120" height="60">
+      <path d="M0,30 Q30,10 60,30 T120,30" stroke="white" stroke-width="3" fill="none" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="2500" height="3500" fill="url(#waves3)"/>
+
+</svg>

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 4000 2250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with second brand color -->
+  <rect width="4000" height="2250" fill="#3F6E3A"/>
+
+  <!-- Subtle dot pattern for visual interest -->
+  <defs>
+    <pattern id="dots2" patternUnits="userSpaceOnUse" width="80" height="80">
+      <circle cx="40" cy="40" r="8" fill="#C6E88E" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="4000" height="2250" fill="url(#dots2)"/>
+
+</svg>
+

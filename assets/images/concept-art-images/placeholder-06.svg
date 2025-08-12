@@ -1,0 +1,17 @@
+<svg viewBox="0 0 3840 2160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with second brand color -->
+  <rect width="3840" height="2160" fill="#3F6E3A"/>
+
+  <!-- Subtle hexagon pattern for visual interest -->
+  <defs>
+    <pattern id="hexagons6" patternUnits="userSpaceOnUse" width="60" height="52">
+      <polygon points="30,5 45,15 45,35 30,45 15,35 15,15" stroke="white" stroke-width="2" fill="none" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="3840" height="2160" fill="url(#hexagons6)"/>
+
+  <!-- Centered text -->
+  <text x="1920" y="980" font-family="Poppins, Inter, Arial, sans-serif" font-size="216" font-weight="bold" text-anchor="middle" fill="white">Placeholder 06</text>
+  <text x="1920" y="1250" font-family="Poppins, Inter, Arial, sans-serif" font-size="108" font-weight="600" text-anchor="middle" fill="white">3840 × 2160</text>
+</svg>
+

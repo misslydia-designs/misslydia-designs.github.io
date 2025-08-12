@@ -1,0 +1,14 @@
+<svg viewBox="0 0 4000 2000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with first brand color (cycle repeats) -->
+  <rect width="4000" height="2000" fill="#C6E88E"/>
+
+  <!-- Subtle diamond pattern for visual interest -->
+  <defs>
+    <pattern id="diamonds9" patternUnits="userSpaceOnUse" width="80" height="80">
+      <polygon points="40,10 60,40 40,70 20,40" stroke="#3F6E3A" stroke-width="2" fill="none" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="4000" height="2000" fill="url(#diamonds9)"/>
+
+</svg>
+

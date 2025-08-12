@@ -657,248 +657,205 @@ Clean header with slide-out menu - no scroll hiding
   opacity: 1;
   transform: translateY(0);
 }
+/*
+=== CONCEPT ART GALLERY STYLES ===
+Responsive gallery layout for concept art pieces
+Mobile-first: stacked layout → desktop: side-by-side image/text
+*/
 
-/* Responsive Design */
-@media (max-width: 479px) {
-  /* Extra small screens - phones in portrait */
-  .slide-menu-content {
-    width: 280px;
-    max-width: 85vw;
-  }
-
-  .hero {
-    min-height: 40vh;
-  }
-
-  .hero-content {
-    padding: var(--space-lg);
-  }
-
-  .circle-card {
-    max-width: 180px;
-  }
-
-  .video-play {
-    min-width: 48px;
-    min-height: 48px;
-    width: 64px;
-    height: 64px;
-    font-size: 20px;
-  }
+/* Page Header for Concept Art page */
+.page-header {
+  padding: var(--space-xl) 0 var(--space-lg);
+  background-color: var(--white);
+  text-align: center;
 }
 
-@media (min-width: 480px) {
-  :root {
-    --container-padding: var(--space-lg);
-  }
-
-  .grid-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
-  }
-
-  .contact-content {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
+.page-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--leaf-dark);
+  margin-bottom: var(--space-md);
 }
 
+.page-intro {
+  font-size: var(--text-lg);
+  color: var(--leaf-dark);
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* ===== Concept Art (FINAL): padded, no-crop image boxes + text padding ===== */
+/* === Concept Art Gallery: Final with Fixes === */
+
+/* Section spacing */
+.gallery-section {
+  padding: var(--space-lg) 0 var(--space-xl);
+}
+
+/* Grid spacing */
+.gallery {
+  display: grid;
+  gap: var(--space-xl);
+}
 @media (min-width: 768px) {
-  body {
-    padding-top: 64px;
-  }
+  .gallery { gap: calc(var(--space-xl) + 8px); }
+}
 
-  .header-content {
-    min-height: 64px;
-    padding: var(--space-sm) 0;
+/* Card layout */
+.art-item {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;          /* mobile: stacked */
+  grid-template-areas:
+    "image"
+    "meta";
+  align-items: stretch;                /* PATCH: children stretch in grid */
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(63,110,58,0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+  overflow: visible;
+}
+@media (min-width: 768px) {
+  .art-item {
+    grid-template-columns: 1fr 1fr;    /* desktop: side-by-side */
+    grid-template-areas: "image meta";
   }
+}
+.art-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(63,110,58,0.12);
+}
 
-  .site-logo {
-    max-height: 36px;
-  }
+/* Image container: padded, uniform height, no crop */
+.art-media {
+  grid-area: image;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  box-sizing: border-box;
+  background: var(--sand);
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 0;                        /* PATCH: allow grid child shrink */
+  min-height: 0;
+  height: clamp(220px, 36vw, 460px);   /* responsive uniform height */
+}
 
-  .site-name {
-    font-size: var(--text-lg);
-  }
+/* Images/SVGs always fit inside box */
+.art-media > img,
+.art-media > svg {
+  width: 100% !important;              /* force box fill */
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill !important;      /* keep aspect, letterbox if needed */
+  aspect-ratio: auto;                  /* fix SVG ratio issues */
+  display: block;
+  -webkit-user-drag: none;
+  overflow: hidden;
+}
 
-  .nav-toggle {
-    display: none;
-  }
+/* Text panel */
+.art-meta {
+  grid-area: meta;
+  background: var(--sand);
+  border-radius: 12px;
+  padding: 16px;                       /* ensure mobile padding */
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+}
+@media (min-width: 768px) {
+  .art-meta { padding: 24px; }
+}
 
-  .main-nav {
-    position: static;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-    background: none;
-    border: none;
-    max-height: none;
-    overflow: visible;
-  }
+.art-meta h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--leaf-dark);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
 
-  .nav-links {
-    display: flex !important;
+.art-meta p {
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  color: var(--leaf-dark);
+  opacity: 0.9;
+}
+
+/* Art Facts List */
+.art-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.art-facts li {
+  font-size: var(--text-sm);
+  color: var(--leaf-dark);
+  font-weight: 500;
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid rgba(63, 110, 58, 0.15);
+}
+.art-facts li:last-child {
+  border-bottom: none;
+}
+
+/* Tablet: better fact spacing */
+@media (min-width: 480px) {
+  .art-facts {
     flex-direction: row;
-    gap: var(--space-xs);
-    padding: 0;
-  }
-
-  .nav-link {
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: 1.5rem;
-    background-color: transparent;
-    min-height: auto;
-    font-size: var(--text-sm);
-  }
-
-  .nav-link:hover {
-    background-color: var(--leaf-light);
-    color: var(--leaf-dark);
-  }
-
-  .nav-link[aria-current="page"] {
-    background-color: var(--berry);
-    color: var(--white);
-  }
-
-  .hero {
-    min-height: 60vh;
-  }
-
-  .circle-icon {
-    width: 120px;
-    height: 120px;
-  }
-
-  .icon-image {
-    width: 56px;
-    height: 56px;
-  }
-
-  .video-wrap {
-    margin: var(--space-2xl) 0;
-  }
-
-  .video-play {
-    width: 96px;
-    height: 96px;
-    font-size: 32px;
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    padding-top: 70px;
-  }
-
-  .header-content {
-    min-height: 70px;
-  }
-
-  .site-logo {
-    max-height: 40px;
-  }
-
-  .logo-section {
+    flex-wrap: wrap;
     gap: var(--space-sm);
   }
-
-  .nav-links {
-    gap: var(--space-sm);
+  .art-facts li {
+    border-bottom: none;
+    border-right: 1px solid rgba(63, 110, 58, 0.15);
+    padding-right: var(--space-sm);
+    margin-right: var(--space-sm);
   }
-
-  .nav-link {
-    padding: var(--space-sm) var(--space-md);
-  }
-
-  .hero {
-    min-height: 70vh;
-  }
-
-  .grid-wrapper {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .circle-icon {
-    width: 140px;
-    height: 140px;
-  }
-
-  .icon-image {
-    width: 64px;
-    height: 64px;
-  }
-
-  .video-section {
-    padding: var(--space-3xl) 0;
-  }
-
-  .video-play {
-    width: 112px;
-    height: 112px;
-    font-size: 40px;
+  .art-facts li:last-child {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
   }
 }
 
-@media (min-width: 1440px) {
-  /* Large screens - better spacing */
-  :root {
-    --container-padding: clamp(2rem, 5vw, 4rem);
-  }
-
-  .hero {
-    min-height: 80vh;
-  }
-
-  .grid-wrapper {
-    gap: var(--space-3xl);
-  }
+/* Tiny-phone tweak */
+@media (max-width: 359px) {
+  .art-media { height: clamp(180px, 45vw, 320px); }
 }
 
-@media (orientation: landscape) and (max-height: 500px) {
-  /* Landscape phones - reduce hero height */
-  .hero {
-    min-height: 60vh;
-  }
-
-  body {
-    padding-top: 50px;
-  }
-
-  .header-content {
-    min-height: 50px;
-  }
-}
-
-/* High DPI displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .site-logo {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-}
-
-/* Reduced Motion */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  .fade-up {
-    opacity: 1;
+  .art-item { transition: none; }
+  .art-item:hover {
     transform: none;
+    box-shadow: 0 4px 20px rgba(63,110,58,0.08);
   }
+}
 
-  .nav-toggle .hamburger-line,
-  .main-nav,
-  .video-play {
-    transition: none;
+/* Focus outline for keyboard nav */
+.art-item:focus-within {
+  outline: 3px solid var(--berry);
+  outline-offset: 4px;
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .art-meta {
+    background-color: var(--white);
+    border: 2px solid var(--leaf-dark);
   }
+  .art-facts li { border-color: var(--leaf-dark); }
 }

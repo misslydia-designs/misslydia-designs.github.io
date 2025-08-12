@@ -1,0 +1,14 @@
+<svg viewBox="0 0 3000 2000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with first brand color -->
+  <rect width="3000" height="2000" fill="#C6E88E"/>
+
+  <!-- Subtle diagonal pattern for visual interest -->
+  <defs>
+    <pattern id="diagonals1" patternUnits="userSpaceOnUse" width="100" height="100">
+      <path d="M0,100 L100,0" stroke="#3F6E3A" stroke-width="2" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="3000" height="2000" fill="url(#diagonals1)"/>
+
+</svg>
+

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 3500 2000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with fourth brand color -->
+  <rect width="3500" height="2000" fill="#EEDCA8"/>
+
+  <!-- Subtle grid pattern for visual interest -->
+  <defs>
+    <pattern id="grid4" patternUnits="userSpaceOnUse" width="100" height="100">
+      <path d="M100,0 L0,0 0,100" stroke="#3F6E3A" stroke-width="2" fill="none" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="3500" height="2000" fill="url(#grid4)"/>
+
+</svg>
+

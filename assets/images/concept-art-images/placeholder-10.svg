@@ -1,0 +1,14 @@
+<svg viewBox="0 0 3600 2400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with second brand color -->
+  <rect width="3600" height="2400" fill="#3F6E3A"/>
+
+  <!-- Subtle circle pattern for visual interest -->
+  <defs>
+    <pattern id="circles10" patternUnits="userSpaceOnUse" width="90" height="90">
+      <circle cx="45" cy="45" r="20" stroke="white" stroke-width="2" fill="none" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="3600" height="2400" fill="url(#circles10)"/>
+
+</svg>
+

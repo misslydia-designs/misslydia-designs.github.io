@@ -1,0 +1,14 @@
+<svg viewBox="0 0 4000 2667" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with first brand color (cycle repeats) -->
+  <rect width="4000" height="2667" fill="#C6E88E"/>
+
+  <!-- Subtle chevron pattern for visual interest -->
+  <defs>
+    <pattern id="chevrons5" patternUnits="userSpaceOnUse" width="80" height="40">
+      <path d="M20,0 L40,20 L20,40 M60,0 L80,20 L60,40" stroke="#3F6E3A" stroke-width="3" fill="none" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="4000" height="2667" fill="url(#chevrons5)"/>
+
+</svg>
+
