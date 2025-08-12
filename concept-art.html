@@ -2,9 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concept Art - Katelyn Lydia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Consistent Site Header -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
+                    <h1 class="site-name">Katelyn Lydia</h1>
+                </div>
 
+                <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false" aria-label="Open navigation menu">
+                    <span class="menu-text">Menu</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slide-out Menu -->
+    <nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
+        <div class="slide-menu-overlay"></div>
+        <div class="slide-menu-content">
+            <button class="menu-close" aria-label="Close navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <ul class="menu-links">
+                <li><a href="/index.html" class="menu-link">Home</a></li>
+                <li><a href="/projects.html" class="menu-link">Projects</a></li>
+                <li><a href="/about.html" class="menu-link">About</a></li>
+                <li><a href="/concept-art.html" class="menu-link" aria-current="page">Concept Art</a></li>
+                <li><a href="/showreel.html" class="menu-link">Showreels</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="concept-art-section">
+            <div class="container">
+                <h1>Concept Art</h1>
+                <p>Coming Soon</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="contact-footer" role="contentinfo">
+        <div class="container">
+            <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/header.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <title>Showreels</title>
   <!-- Film reel -->
-  <circle cx="32" cy="32" r="20" fill="#EEDCA8" opacity="0.7"/>
+  <circle cx="32" cy="32" r="20" fill="#EEDCA8"/>
   <circle cx="32" cy="32" r="20" stroke="#3F6E3A" stroke-width="2.5" fill="none"/>
   <circle cx="32" cy="32" r="8" stroke="#3F6E3A" stroke-width="2" fill="none"/>
   <!-- Film holes -->
@@ -20,4 +20,3 @@
   <rect x="54" y="30" width="1" height="1" fill="#3F6E3A"/>
   <rect x="54" y="33" width="1" height="1" fill="#3F6E3A"/>
 </svg>
-

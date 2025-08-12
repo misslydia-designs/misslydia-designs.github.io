@@ -2,9 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Showreel - Katelyn Lydia</title>
+    <!--
+    VIDEO CUSTOMIZATION:
+    - Replace /assets/videos/showreel.mp4 with your video file
+    - Update poster image: /assets/images/showreel-poster.jpg
+    - Add captions file: /assets/videos/showreel.vtt for accessibility
+    - Modify video title and description in main section
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
+<!-- Consistent Site Header -->
+<header class="site-header" role="banner">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
+                <h1 class="site-name">Katelyn Lydia</h1>
+            </div>
 
+            <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false" aria-label="Open navigation menu">
+                <span class="menu-text">Menu</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Slide-out Menu -->
+<nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
+    <div class="slide-menu-overlay"></div>
+    <div class="slide-menu-content">
+        <button class="menu-close" aria-label="Close navigation menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <ul class="menu-links">
+            <li><a href="/index.html" class="menu-link">Home</a></li>
+            <li><a href="/projects.html" class="menu-link">Projects</a></li>
+            <li><a href="/about.html" class="menu-link">About</a></li>
+            <li><a href="/concept-art.html" class="menu-link">Concept Art</a></li>
+            <li><a href="/showreel.html" class="menu-link" aria-current="page">Showreels</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <main>
+        <section class="video-section" aria-labelledby="video-title">
+            <div class="container">
+                <div class="video-content">
+                    <h2 id="video-title" class="video-title">Showreel</h2>
+
+                    <div class="video-wrap">
+                        <video
+                            id="showreel"
+                            controls
+                            preload="metadata"
+                            playsinline
+                            poster="/assets/images/showreel-poster.jpg"
+                            aria-describedby="video-caption"
+                        >
+                            <source src="/assets/videos/showreel.mp4" type="video/mp4" />
+                            <track kind="captions" srclang="en" src="/assets/videos/showreel.vtt" label="English" default>
+                            Your browser does not support the video tag. Please update your browser or try a different one.
+                        </video>
+
+                        <button class="video-play" aria-label="Play video">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <p id="video-caption" class="video-caption">Showreel • 2025</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-contact">
+                    <a href="mailto:katelyn@katelynlydia.com" class="footer-link">katelyn@katelynlydia.com</a>
+                </p>
+                <p class="footer-copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/showreel.js"></script>
+    <script src="assets/js/header.js"></script>
 </body>
 </html>

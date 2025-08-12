@@ -4,6 +4,5 @@
   <circle cx="32" cy="20" r="8" stroke="#3F6E3A" stroke-width="2.5" fill="none"/>
   <path d="M16 52c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#3F6E3A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   <!-- Heart accent -->
-  <path d="M44 16c-2.5-2.5-6.5-2.5-9 0s-6.5-2.5-9 0c-2.5 2.5-2.5 6.5 0 9l9 9 9-9c2.5-2.5 2.5-6.5 0-9z" fill="#C6E88E" opacity="0.7"/>
+  <path d="M44 16c-2.5-2.5-6.5-2.5-9 0s-6.5-2.5-9 0c-2.5 2.5-2.5 6.5 0 9l9 9 9-9c2.5-2.5 2.5-6.5 0-9z" fill="#C6E88E"/>
 </svg>
-
