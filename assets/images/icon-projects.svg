@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Projects</title>
+  <!-- Folder base -->
+  <path d="M8 16h48v36a4 4 0 01-4 4H12a4 4 0 01-4-4V16z" fill="#EEDCA8" opacity="0.7"/>
+  <path d="M8 16h48v36a4 4 0 01-4 4H12a4 4 0 01-4-4V16z" stroke="#3F6E3A" stroke-width="2" fill="none"/>
+  <!-- Folder tab -->
+  <path d="M8 16V12a4 4 0 014-4h8l4 4h28v4" stroke="#3F6E3A" stroke-width="2" fill="none"/>
+  <!-- Project documents -->
+  <rect x="16" y="28" width="12" height="16" rx="2" fill="#C6E88E" opacity="0.8"/>
+  <rect x="32" y="24" width="12" height="20" rx="2" fill="#C6E88E"/>
+  <rect x="48" y="32" width="4" height="12" rx="1" fill="#7A0E2B"/>
+  <!-- Grid lines on documents -->
+  <line x1="18" y1="32" x2="26" y2="32" stroke="#3F6E3A" stroke-width="1"/>
+  <line x1="18" y1="36" x2="26" y2="36" stroke="#3F6E3A" stroke-width="1"/>
+  <line x1="34" y1="28" x2="42" y2="28" stroke="#3F6E3A" stroke-width="1"/>
+  <line x1="34" y1="32" x2="42" y2="32" stroke="#3F6E3A" stroke-width="1"/>
+</svg>
+

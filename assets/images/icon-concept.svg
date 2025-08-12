@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Concept Art</title>
+  <!-- Paintbrush -->
+  <path d="M12 52l8-8 4 4-8 8-4-4z" fill="#C6E88E" opacity="0.7"/>
+  <path d="M20 44l24-24" stroke="#3F6E3A" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M44 20l8-8" stroke="#3F6E3A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Brush tip -->
+  <ellipse cx="46" cy="18" rx="3" ry="6" transform="rotate(-45 46 18)" fill="#7A0E2B"/>
+  <!-- Palette -->
+  <path d="M32 48c-8 0-14-6-14-14 0-8 6-14 14-14 8 0 14 6 14 14-2 0-4 2-4 4s2 4 4 4c0 4-6 6-14 6z" stroke="#3F6E3A" stroke-width="2" fill="none"/>
+  <!-- Paint dots -->
+  <circle cx="28" cy="32" r="2" fill="#C6E88E"/>
+  <circle cx="36" cy="28" r="2" fill="#EEDCA8"/>
+  <circle cx="40" cy="36" r="2" fill="#7A0E2B"/>
+</svg>
+
