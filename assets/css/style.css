@@ -1050,232 +1050,210 @@ Mobile-first: stacked layout → desktop: side-by-side image/text
   margin: 0; /* No margins (handled by container padding) */
 }
 
-/* ===== ABOUT PAGE STYLES ===== */
-/* Modern, mobile-first about page for concept artist */
+/* ===== ABOUT PAGE STYLES (Final Layout) ===== */
+/* Layout:
+   Row 1:  [ Profile Photo ] [ Quick Info ]
+   Row 2:  [ Skills        ] [ About Me   ]
+   Row 3:  [       Resume (center/full)   ]
+*/
 
-/* Main about section container: Sets overall page spacing */
+/* Main about section container */
 .about-section {
-  padding: var(--space-3xl) 0; /* Large vertical spacing for breathing room */
-  background: var(--white); /* Clean white background */
+  padding: var(--space-3xl) 0;
+  background: var(--white);
 }
 
-/* About grid: Responsive layout container */
-/* Mobile: single column, Desktop ≥768px: photo left, info right */
+/* Grid container */
 .about-grid {
-  display: grid; /* Use CSS Grid for flexible layout */
-  gap: var(--space-xl); /* Large gap between grid items */
-  grid-template-columns: 1fr; /* Mobile: single column */
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;                      /* mobile: 1 column */
+  grid-template-areas:
+    "photo"
+    "info"
+    "skills"
+    "about"
+    "cv";
 }
 
-/* Desktop layout: two columns */
+/* Desktop/tablet: 2 even columns, specified areas */
 @media (min-width: 768px) {
   .about-grid {
-    grid-template-columns: 300px 1fr; /* Left column fixed width, right column flexible */
-    gap: var(--space-2xl); /* Larger gap on desktop */
+    grid-template-columns: 1fr 1fr;               /* evenly split columns */
+    gap: var(--space-2xl);
+    grid-template-areas:
+      "photo  info"
+      "skills about"
+      "cv     cv";
+    align-items: start;
   }
 }
 
-/* Shared card styling: Used by all about page cards */
+/* Shared card styling */
 .about-card {
-  background: var(--white); /* White background */
-  border-radius: 16px; /* Rounded corners for modern look */
-  box-shadow: 0 4px 20px rgba(63,110,58,0.08); /* Subtle green shadow for depth */
-  padding: var(--space-lg); /* Comfortable internal spacing */
-  border: 1px solid rgba(63,110,58,0.05); /* Very subtle border in brand green */
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(63,110,58,0.08);
+  padding: var(--space-lg);
+  border: 1px solid rgba(63,110,58,0.05);
 }
 
-/* Profile photo card: Special styling for the image container */
+/* AREA ASSIGNMENTS (add these classes to the right cards in HTML) */
+.about-photo-card { grid-area: photo; }      /* Profile picture card */
+.card--info        { grid-area: info; }      /* Quick Info card */
+.card--skills      { grid-area: skills; }    /* Skills card */
+.card--about       { grid-area: about; }     /* About Me card */
+.card--cv          { grid-area: cv; }        /* Resume card */
+
+/* Center the Resume card content a bit nicer */
+.card--cv {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* Profile photo card specifics */
 .about-photo-card {
-  display: flex; /* Use flexbox for centering */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  padding: var(--space-md); /* Less padding to let image fill more space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
 }
 
-/* Photo container: Wraps the profile image */
+/* Photo container (if you use <figure class="photo-container">) */
 .photo-container {
-  width: 100%; /* Fill available width */
-  max-width: 280px; /* Maximum size constraint */
-  margin: 0; /* Remove default figure margins */
+  width: 100%;
+  max-width: 320px;           /* keep a sensible max on large screens */
+  margin: 0;
 }
 
-/* Profile photo image styling */
+/* Profile photo: full image, never distorted */
 .profile-photo {
-  width: 100%;                /* Fill container width */
-  height: auto;               /* Keep natural height */
-  object-fit: contain;        /* Show full image, no distortion */
-  border-radius: 12px;        /* Rounded corners */
-  display: block;             /* Remove default inline spacing */
-  background: var(--sand);    /* Fallback background color if image fails */
+  width: 100%;
+  height: auto;               /* preserve natural aspect ratio */
+  object-fit: contain;        /* show the entire image, no cropping/distortion */
+  display: block;
+  border-radius: 12px;
+  background: var(--sand);    /* subtle backing if aspect leaves bars */
 }
 
-/* Right column container: Stacks info cards vertically */
-.about-info-column {
-  display: flex; /* Use flexbox for vertical stacking */
-  flex-direction: column; /* Stack children vertically */
-  gap: var(--space-xl); /* Space between stacked cards */
-}
-
-/* Card titles: Headings for each card section */
+/* Card titles */
 .card-title {
-  font-family: var(--font-heading); /* Use heading font (Poppins) */
-  font-size: var(--text-xl); /* Extra large text size */
-  font-weight: 600; /* Semi-bold weight */
-  color: var(--leaf-dark); /* Dark green brand color */
-  margin: 0 0 var(--space-md) 0; /* Space below title */
-  line-height: 1.3; /* Tight line spacing for headings */
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--leaf-dark);
+  margin: 0 0 var(--space-md);
+  line-height: 1.3;
 }
 
-/* Info grid: Layout for quick info key-value pairs */
+/* Quick Info grid */
 .info-grid {
-  display: grid; /* Use CSS Grid for organized layout */
-  gap: var(--space-md); /* Medium spacing between items */
-  grid-template-columns: 1fr; /* Mobile: single column */
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;             /* mobile: 1 column */
 }
-
-/* Tablet and larger: two columns for info items */
 @media (min-width: 480px) {
-  .info-grid {
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-  }
+  .info-grid { grid-template-columns: 1fr 1fr; }  /* 2 columns on small tablets+ */
 }
 
-/* Individual info item container */
 .info-item {
-  display: flex; /* Use flexbox for label/value alignment */
-  flex-direction: column; /* Stack label above value */
-  gap: var(--space-xs); /* Small gap between label and value */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
-/* Info labels: "Full Name", "Email", etc. */
 .info-label {
-  font-size: var(--text-sm); /* Small text size */
-  font-weight: 500; /* Medium weight for emphasis */
-  color: var(--leaf-dark); /* Dark green brand color */
-  opacity: 0.7; /* Slightly transparent to de-emphasize */
-  text-transform: uppercase; /* ALL CAPS for label styling */
-  letter-spacing: 0.05em; /* Slight letter spacing for readability */
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--leaf-dark);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Info values: The actual data like "Katelyn Lydia", email address, etc. */
 .info-value {
-  font-size: var(--text-base); /* Normal text size */
-  font-weight: 500; /* Medium weight */
-  color: var(--leaf-dark); /* Dark green brand color */
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--leaf-dark);
 }
 
-/* Info links: Email and phone number links */
 .info-link {
-  color: var(--leaf-dark); /* Dark green brand color */
-  text-decoration: none; /* Remove default underline */
-  transition: color 0.2s ease; /* Smooth color change on hover */
+  color: var(--leaf-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-
-/* Hover and focus effects for info links */
 .info-link:hover,
-.info-link:focus {
-  color: var(--berry); /* Change to maroon brand color on interaction */
-  text-decoration: underline; /* Add underline on hover/focus */
-}
+.info-link:focus { color: var(--berry); text-decoration: underline; }
+.info-link:focus-visible { outline: 2px solid var(--berry); outline-offset: 2px; border-radius: 2px; }
 
-/* Focus ring for keyboard navigation */
-.info-link:focus-visible {
-  outline: 2px solid var(--berry); /* Maroon outline for accessibility */
-  outline-offset: 2px; /* Space between outline and text */
-  border-radius: 2px; /* Slightly rounded outline */
-}
-
-/* About description: The main paragraph text */
+/* About description */
 .about-description {
-  font-size: var(--text-base); /* Normal text size */
-  line-height: 1.6; /* Comfortable reading line spacing */
-  color: var(--leaf-dark); /* Dark green brand color */
-  margin: 0; /* Remove default paragraph margins */
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--leaf-dark);
+  margin: 0;
 }
 
-/* Skills list: Container for skill chips */
+/* Skills */
 .skills-list {
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove default list padding */
-  margin: 0; /* Remove default list margins */
-  display: flex; /* Use flexbox for chip layout */
-  flex-wrap: wrap; /* Allow chips to wrap to new lines */
-  gap: var(--space-sm); /* Medium spacing between chips */
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap;
+  gap: var(--space-sm);
 }
-
-/* Individual skill chips: Pill-shaped elements */
 .skill-chip {
-  background: var(--sand); /* Light beige background */
-  color: var(--leaf-dark); /* Dark green text */
-  padding: var(--space-xs) var(--space-sm); /* Comfortable internal spacing */
-  border-radius: 20px; /* Pill shape (large border radius) */
-  font-size: var(--text-sm); /* Small text size */
-  font-weight: 500; /* Medium weight */
-  border: 1px solid transparent; /* Invisible border (for hover effect) */
-  transition: all 0.2s ease; /* Smooth animation for interactions */
-  cursor: default; /* Normal cursor (not clickable) */
-  min-height: 44px; /* Minimum touch target size for mobile accessibility */
-  display: flex; /* Use flexbox for centering */
-  align-items: center; /* Center text vertically */
+  background: var(--sand);
+  color: var(--leaf-dark);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 20px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  min-height: 36px;
+  display: inline-flex; align-items: center;
 }
-
-/* Hover and focus effects for skill chips */
 .skill-chip:hover,
 .skill-chip:focus {
-  background: var(--leaf-light); /* Light green background on interaction */
-  border-color: var(--leaf-dark); /* Dark green border */
-  transform: translateY(-1px); /* Slight lift effect */
+  background: var(--leaf-light);
+  border-color: var(--leaf-dark);
+  transform: translateY(-1px);
 }
 
-/* CV download button: Professional download link styled as button */
+/* CV download button */
 .cv-download {
-  display: inline-flex; /* Use flexbox for icon and text alignment */
-  align-items: center; /* Center content vertically */
-  gap: var(--space-sm); /* Space between icon and text */
-  background: var(--leaf-dark); /* Dark green background */
-  color: var(--white); /* White text */
-  padding: var(--space-md) var(--space-lg); /* Comfortable button padding */
-  border-radius: 8px; /* Rounded corners */
-  text-decoration: none; /* Remove default link underline */
-  font-family: var(--font-body); /* Use body font */
-  font-size: var(--text-base); /* Normal text size */
-  font-weight: 500; /* Medium weight */
-  transition: all 0.3s ease; /* Smooth animation for interactions */
-  border: 2px solid var(--leaf-dark); /* Border matching background */
-  min-height: 44px; /* Minimum touch target size for mobile accessibility */
-  justify-content: center; /* Center content horizontally */
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--leaf-dark);
+  color: var(--white);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid var(--leaf-dark);
+  min-height: 44px;
+  justify-content: center;
 }
-
-/* Hover effect for CV download button */
 .cv-download:hover {
-  background: var(--berry); /* Change to maroon on hover */
-  border-color: var(--berry); /* Matching border color */
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0 4px 12px rgba(122, 14, 43, 0.3); /* Shadow in maroon color */
+  background: var(--berry);
+  border-color: var(--berry);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(122, 14, 43, 0.3);
 }
-
-/* Focus ring for CV download button (accessibility) */
 .cv-download:focus-visible {
-  outline: 3px solid var(--berry); /* Prominent maroon outline */
-  outline-offset: 2px; /* Space between outline and button */
+  outline: 3px solid var(--berry);
+  outline-offset: 2px;
 }
 
-/* Download icon styling */
-.download-icon {
-  font-size: var(--text-lg); /* Larger size for the icon */
-  line-height: 1; /* Tight line spacing */
-}
+.download-icon { font-size: var(--text-lg); line-height: 1; }
 
-/* Accessibility: Respect user's motion preferences */
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .skill-chip,
-  .cv-download,
-  .info-link {
-    transition: none; /* Disable animations for users who prefer reduced motion */
-  }
-
-  .skill-chip:hover,
-  .cv-download:hover {
-    transform: none; /* Remove lift effects */
-  }
+  .skill-chip, .cv-download, .info-link { transition: none; }
+  .skill-chip:hover, .cv-download:hover { transform: none; }
 }
