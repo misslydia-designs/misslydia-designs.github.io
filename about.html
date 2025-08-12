@@ -51,13 +51,112 @@
         </div>
     </nav>
 
+    <!-- Main content area: Contains the about page information -->
     <main>
+        <!-- About section: Main container for all about page content -->
         <section class="about-section">
             <div class="container">
-                <h1>About Me</h1>
-                <p>Coming Soon</p>
-            </div>
-        </section>
+                <!-- About grid: Responsive layout container -->
+                <!-- Mobile: single column, Desktop: photo left, info right -->
+                <div class="about-grid">
+
+                    <!-- Profile Photo Card: Left column on desktop, top on mobile -->
+                    <div class="about-card about-photo-card">
+                        <!-- figure tag semantically groups image with its caption -->
+                        <figure class="photo-container">
+                            <!-- Profile photo with proper alt text for screen readers -->
+                            <img src="/assets/images/about-me-images-and-cv/profile-picture.jpg"
+                                 alt="Portrait photo of Katelyn Lydia, concept artist"
+                                 class="profile-photo"
+                                 loading="lazy"
+                                 decoding="async">
+                        </figure>
+                    </div>
+
+                    <!-- Right column: Contains all other cards stacked vertically -->
+                    <div class="about-info-column">
+
+                        <!-- Quick Info Card: Essential contact and personal information -->
+                        <div class="about-card">
+                            <!-- Card heading -->
+                            <h2 class="card-title">Quick Info</h2>
+                            <!-- Information grid: Responsive layout for key details -->
+                            <div class="info-grid">
+                                <!-- Each info item has a label and value -->
+                                <div class="info-item">
+                                    <span class="info-label">Full Name</span>
+                                    <span class="info-value">Katelyn Lydia</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Email</span>
+                                    <!-- mailto link allows users to open their email client -->
+                                    <a href="mailto:hello@katelynlydia.com" class="info-value info-link">hello@katelynlydia.com</a>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Phone</span>
+                                    <!-- tel link allows mobile users to call directly -->
+                                    <a href="tel:+1234567890" class="info-value info-link">+1 (234) 567-890</a>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Age</span>
+                                    <span class="info-value">25</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- About Me Card: Personal description and background -->
+                        <div class="about-card">
+                            <h2 class="card-title">About Me</h2>
+                            <!-- Description paragraph - easily editable -->
+                            <p class="about-description">
+                                I'm a passionate concept artist with a love for creating immersive worlds and compelling characters.
+                                My work spans from fantastical environments to detailed character designs, always focusing on
+                                storytelling through visual art. With experience in both digital and traditional media, I bring
+                                ideas to life through careful attention to atmosphere, lighting, and narrative detail.
+                            </p>
+                        </div>
+
+                        <!-- Skills Card: Technical and artistic abilities -->
+                        <div class="about-card">
+                            <h2 class="card-title">Skills</h2>
+                            <!-- Skills list: Responsive chips that wrap to new lines -->
+                            <ul class="skills-list">
+                                <!-- Each skill is a "chip" - a pill-shaped button-like element -->
+                                <li class="skill-chip">Concept Art</li>
+                                <li class="skill-chip">Character Design</li>
+                                <li class="skill-chip">Environment Design</li>
+                                <li class="skill-chip">Digital Painting</li>
+                                <li class="skill-chip">Blender</li>
+                                <li class="skill-chip">Photoshop</li>
+                                <li class="skill-chip">Procreate</li>
+                                <li class="skill-chip">Clip Studio Paint</li>
+                                <li class="skill-chip">ZBrush</li>
+                                <li class="skill-chip">Traditional Media</li>
+                            </ul>
+                        </div>
+
+                        <!-- CV Download Card: Professional resume download -->
+                        <div class="about-card">
+                            <h2 class="card-title">Resume</h2>
+                            <!-- Download button with proper accessibility attributes -->
+                            <!-- download attribute suggests filename when saving -->
+                            <!-- aria-label provides clear description for screen readers -->
+                            <a href="/assets/images/about-me-images-and-cv/cv.pdf"
+                               class="cv-download"
+                               download="Katelyn_Lydia_CV.pdf"
+                               role="button"
+                               aria-label="Download Katelyn Lydia's CV as PDF file">
+                                <!-- Download icon using CSS content or could use SVG -->
+                                <span class="download-icon" aria-hidden="true">📄</span>
+                                Download CV (PDF)
+                            </a>
+                        </div>
+
+                    </div> <!-- End of about-info-column -->
+
+                </div> <!-- End of about-grid -->
+            </div> <!-- End of container -->
+        </section> <!-- End of about-section -->
     </main>
 
     <footer class="contact-footer" role="contentinfo">
