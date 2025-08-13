@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const contactElements = document.querySelectorAll('.contact-info');
         if (contactElements.length > 0 && contact && contact.email) {
             contactElements.forEach(element => {
-                element.innerHTML = `Email: <a href="mailto:${contact.email}" class="contact-link">${contact.email}</a>`;
+                element.innerHTML = `Email: <a href="mailto:${contact.email}" class="contact-link" rel="noopener noreferrer">${contact.email}</a>`;
             });
         }
     }

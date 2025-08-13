@@ -5,200 +5,245 @@
    Row 3:  [       Resume (center/full)   ]
 */
 
-/* Main about section container */
+/* Main container that holds all the about page content */
 .about-section {
-    padding: var(--space-3xl) 0;
-    background: var(--white);
+    /* CSS variables (custom properties) are reusable values defined elsewhere in the project */
+    /* They start with -- and are accessed using var() function */
+    padding: var(--space-3xl) 0; /* Add large padding above and below, no padding left/right */
+    background: var(--white); /* Set background color using a CSS variable */
 }
 
-/* Grid container */
+/* Grid container that arranges all the cards in a structured layout */
 .about-grid {
-    display: grid;
-    gap: var(--space-xl);
-    grid-template-columns: 1fr; /* mobile: 1 column */
+    /* CSS Grid is a powerful layout system that creates rows and columns */
+    display: grid; /* Turn this element into a grid container */
+    gap: var(--space-xl); /* Space between grid items (cards) */
+
+    /* On mobile devices, use a single column layout */
+    grid-template-columns: 1fr; /* 1fr means "1 fraction" - takes up all available space */
+
+    /* Define named areas for each section - this makes it easy to position items */
+    /* Each string represents a row, and each word represents a column area */
     grid-template-areas:
-    "photo"
-    "info"
-    "skills"
-    "about"
-    "cv";
+    "photo"   /* Row 1: Profile photo takes full width */
+    "info"    /* Row 2: Quick info takes full width */
+    "skills"  /* Row 3: Skills takes full width */
+    "about"   /* Row 4: About me text takes full width */
+    "cv";     /* Row 5: CV/Resume takes full width */
 }
 
-/* Desktop/tablet: 2 even columns, specified areas */
+/* Media query: applies styles only when screen is 768px wide or larger (tablets/desktops) */
 @media (min-width: 768px) {
     .about-grid {
-        grid-template-columns: 1fr 1fr; /* evenly split columns */
-        gap: var(--space-2xl);
+        /* On larger screens, create two equal columns */
+        grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+        gap: var(--space-2xl); /* Larger gap between items on bigger screens */
+
+        /* Rearrange the grid areas for a 2-column desktop layout */
         grid-template-areas:
-      "photo  info"
-      "skills about"
-      "cv     cv";
+      "photo  info"    /* Row 1: Photo on left, Info on right */
+      "skills about"   /* Row 2: Skills on left, About on right */
+      "cv     cv";     /* Row 3: CV spans both columns (full width) */
+
+        /* Align items to the top of their grid areas instead of stretching */
         align-items: start;
     }
 }
 
-/* Shared card styling */
+/* Base styling shared by all cards on the about page */
 .about-card {
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(63, 110, 58, 0.08);
-    padding: var(--space-lg);
+    background: var(--white); /* White background */
+    border-radius: 16px; /* Rounded corners (16px radius) */
+
+    /* Box shadow creates a subtle drop shadow effect */
+    /* Format: x-offset y-offset blur-radius color */
+    box-shadow: 0 4px 20px rgba(63, 110, 58, 0.08); /* Soft green shadow with low opacity */
+
+    padding: var(--space-lg); /* Internal spacing inside the card */
+
+    /* Border with very low opacity for a subtle outline */
     border: 1px solid rgba(63, 110, 58, 0.05);
 }
 
-/* AREA ASSIGNMENTS (add these classes to the right cards in HTML) */
-.about-photo-card {
-    grid-area: photo;
-}
+/* AREA ASSIGNMENTS - These classes assign each card to a specific grid area */
+/* Each card in the HTML needs one of these classes to position correctly */
 
 /* Profile picture card */
-.card--info {
-    grid-area: info;
-}
-
-/* Quick Info card */
-.card--skills {
-    grid-area: skills;
-}
-
-/* Skills card */
-.card--about {
-    grid-area: about;
-}
-
-/* About Me card */
-.card--cv {
-    grid-area: cv;
-}
-
-/* Resume card */
-
-/* Center the Resume card content a bit nicer */
-.card--cv {
-    display: grid;
-    place-items: center;
-    text-align: center;
-}
-
-/* Profile photo card specifics */
 .about-photo-card {
+    grid-area: photo; /* Places this card in the "photo" area defined above */
+}
+
+/* Quick Info card (contact details, location, etc.) */
+.card--info {
+    grid-area: info; /* Places this card in the "info" area */
+}
+
+/* Skills card (list of technical skills) */
+.card--skills {
+    grid-area: skills; /* Places this card in the "skills" area */
+}
+
+/* About Me card (biography/description text) */
+.card--about {
+    grid-area: about; /* Places this card in the "about" area */
+}
+
+/* Resume/CV card */
+.card--cv {
+    grid-area: cv; /* Places this card in the "cv" area */
+}
+
+/* Special styling for the Resume card to center its content nicely */
+.card--cv {
+    /* Using CSS Grid to center content both horizontally and vertically */
+    display: grid;
+    place-items: center; /* Shorthand for align-items: center + justify-items: center */
+    text-align: center; /* Center-align the text */
+}
+
+/* Specific styling for the profile photo card */
+.about-photo-card {
+    /* Flexbox is great for centering content */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-md);
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: var(--space-md); /* Less padding than other cards */
 }
 
-/* Photo container (if you use <figure class="photo-container">) */
+/* Container for the profile photo (if using a <figure> element) */
 .photo-container {
-    width: 100%;
-    max-width: 320px; /* keep a sensible max on large screens */
-    margin: 0;
+    width: 100%; /* Take up full width of its container */
+    max-width: 320px; /* But never exceed 320px to keep photo reasonable size */
+    margin: 0; /* Remove default margins */
 }
 
-/* Profile photo: full image, never distorted */
+/* The actual profile photo image */
 .profile-photo {
-    width: 100%;
-    height: auto; /* preserve natural aspect ratio */
-    object-fit: contain; /* show the entire image, no cropping/distortion */
-    display: block;
-    border-radius: 12px;
-    background: var(--sand); /* subtle backing if aspect leaves bars */
+    width: 100%; /* Fill the container width */
+    height: auto; /* Let height adjust automatically to maintain aspect ratio */
+
+    /* object-fit controls how the image fits within its container */
+    object-fit: contain; /* Show entire image without cropping or distortion */
+
+    display: block; /* Remove any default inline spacing */
+    border-radius: 12px; /* Rounded corners for the image */
+
+    /* Fallback background color in case image has transparent areas */
+    background: var(--sand);
 }
 
-/* Card titles */
+/* Styling for card titles/headings */
 .card-title {
-    font-family: var(--font-heading);
-    font-size: var(--text-xl);
-    font-weight: 600;
-    color: var(--leaf-dark);
-    margin: 0 0 var(--space-md);
-    line-height: 1.3;
+    font-family: var(--font-heading); /* Use the heading font defined in CSS variables */
+    font-size: var(--text-xl); /* Large text size */
+    font-weight: 600; /* Semi-bold weight */
+    color: var(--leaf-dark); /* Dark green color */
+    margin: 0 0 var(--space-md); /* No top margin, medium bottom margin, no side margins */
+    line-height: 1.3; /* Tighter line spacing for headings */
 }
 
-/* Quick Info grid */
+/* Grid layout for the quick info section (contact details) */
 .info-grid {
     display: grid;
-    gap: var(--space-md);
-    grid-template-columns: 1fr; /* mobile: 1 column */
+    gap: var(--space-md); /* Medium spacing between info items */
+    grid-template-columns: 1fr; /* Single column on mobile */
 }
 
+/* On screens 480px and wider, use a 2-column layout for info items */
 @media (min-width: 480px) {
     .info-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
     }
-
-    /* 2 columns on small tablets+ */
 }
 
+/* Individual info item (like "Location: New York") */
 .info-item {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+    flex-direction: column; /* Stack label above value vertically */
+    gap: var(--space-xs); /* Small gap between label and value */
 }
 
+/* Label part of info item (like "Location:") */
 .info-label {
-    font-size: var(--text-sm);
-    font-weight: 500;
+    font-size: var(--text-sm); /* Small text */
+    font-weight: 500; /* Medium weight */
     color: var(--leaf-dark);
-    opacity: 0.7;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    opacity: 0.7; /* Make it slightly transparent for hierarchy */
+    text-transform: uppercase; /* Convert to ALL CAPS */
+    letter-spacing: 0.05em; /* Add slight spacing between letters */
 }
 
+/* Value part of info item (like "New York") */
 .info-value {
-    font-size: var(--text-base);
-    font-weight: 500;
+    font-size: var(--text-base); /* Normal text size */
+    font-weight: 500; /* Medium weight */
     color: var(--leaf-dark);
 }
 
+/* Styling for clickable links in the info section */
 .info-link {
-    color: var(--leaf-dark);
-    text-decoration: none;
-    transition: color 0.2s ease;
+    color: var(--leaf-dark); /* Start with dark green */
+    text-decoration: none; /* Remove default underline */
+
+    /* Transition creates smooth color change animation */
+    transition: color 0.2s ease; /* Color changes smoothly over 0.2 seconds */
 }
 
+/* Hover and focus states for links (when user mouses over or tabs to them) */
 .info-link:hover,
 .info-link:focus {
-    color: var(--berry);
-    text-decoration: underline;
+    color: var(--berry); /* Change to berry color */
+    text-decoration: underline; /* Add underline for clarity */
 }
 
+/* Focus-visible provides better accessibility for keyboard users */
 .info-link:focus-visible {
-    outline: 2px solid var(--berry);
-    outline-offset: 2px;
-    border-radius: 2px;
+    outline: 2px solid var(--berry); /* Visible outline for keyboard navigation */
+    outline-offset: 2px; /* Space between outline and element */
+    border-radius: 2px; /* Slightly rounded outline */
 }
 
-/* About description */
+/* Styling for the main about description paragraph */
 .about-description {
-    font-size: var(--text-base);
-    line-height: 1.6;
+    font-size: var(--text-base); /* Normal text size */
+    line-height: 1.6; /* Generous line spacing for readability */
     color: var(--leaf-dark);
-    margin: 0;
+    margin: 0; /* Remove default paragraph margins */
 }
 
-/* Skills */
+/* Container for the skills list */
 .skills-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default list padding */
+    margin: 0; /* Remove default list margins */
+
+    /* Flexbox layout for skills */
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
+    flex-wrap: wrap; /* Allow items to wrap to next line if needed */
+    gap: var(--space-sm); /* Small gap between skill chips */
 }
 
+/* Individual skill chip/badge */
 .skill-chip {
-    background: var(--sand);
-    color: var(--leaf-dark);
-    padding: var(--space-xs) var(--space-sm);
-    border-radius: 20px;
-    font-size: var(--text-sm);
-    font-weight: 500;
-    border: 1px solid transparent;
+    background: var(--sand); /* Light background color */
+    color: var(--leaf-dark); /* Dark text */
+
+    /* Padding creates space inside the chip */
+    padding: var(--space-xs) var(--space-sm); /* Less top/bottom, more left/right */
+
+    border-radius: 20px; /* Very rounded corners for pill shape */
+    font-size: var(--text-sm); /* Small text */
+    font-weight: 500; /* Medium weight */
+    border: 1px solid transparent; /* Invisible border (for potential hover effects) */
+
+    /* Smooth transitions for any hover effects */
     transition: all 0.2s ease;
-    min-height: 36px;
+
+    min-height: 36px; /* Minimum height ensures consistent sizing */
+
+    /* Flexbox to center text within the chip */
     display: inline-flex;
-    align-items: center;
+    align-items: center; /* Center text vertically */
 }
 
 .skill-chip:hover,
