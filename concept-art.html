@@ -40,335 +40,373 @@ UPDATING TEXT CONTENT:
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- This loads Poppins font (for headings) and Inter font (for body text) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap"
+          rel="stylesheet">
 
     <!-- Link to our main CSS file that controls how everything looks -->
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/concept-art-style.css">
 
     <!-- Favicon is the small icon that shows up in the browser tab -->
     <link rel="icon" type="image/png" href="/assets/images/logo.png">
 </head>
 <!-- The body contains all the content that visitors can see -->
 <body>
-    <!-- Header section: This appears at the top of every page -->
-    <!-- role="banner" helps screen readers understand this is the main header -->
-    <header class="site-header" role="banner">
-        <!-- container class centers the content and adds consistent spacing -->
-        <div class="container">
-            <div class="header-content">
-                <!-- Logo section: Contains the site logo and name -->
-                <div class="logo-section">
-                    <!-- This link takes users back to the home page when clicked -->
-                    <a href="/index.html" class="logo-link">
-                        <!-- Site logo image -->
-                        <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
-                        <!-- Site name as a heading -->
-                        <h1 class="site-name">Katelyn Lydia</h1>
-                    </a>
-                </div>
-
-                <!-- Mobile menu button: Only shows on small screens -->
-                <!-- aria-controls tells screen readers what this button controls -->
-                <!-- aria-expanded="false" indicates the menu starts closed -->
-                <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false" aria-label="Open navigation menu">
-                    <span class="menu-text">Menu</span>
-                    <!-- SVG is a type of image made with code - this draws a hamburger menu icon -->
-                    <!-- aria-hidden="true" tells screen readers to ignore this decorative icon -->
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <!-- This draws three horizontal lines for the hamburger menu -->
-                        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+<!-- Header section: This appears at the top of every page -->
+<!-- role="banner" helps screen readers understand this is the main header -->
+<header class="site-header" role="banner">
+    <!-- container class centers the content and adds consistent spacing -->
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo section: Contains the site logo and name -->
+            <div class="logo-section">
+                <!-- This link takes users back to the home page when clicked -->
+                <a href="/index.html" class="logo-link">
+                    <!-- Site logo image -->
+                    <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
+                    <!-- Site name as a heading -->
+                    <h1 class="site-name">Katelyn Lydia</h1>
+                </a>
             </div>
-        </div>
-    </header>
 
-    <!-- Navigation menu: This slides out on mobile devices -->
-    <!-- role="navigation" tells screen readers this is for navigation -->
-    <!-- aria-hidden="true" means it starts hidden -->
-    <nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
-        <!-- Overlay: The dark background behind the menu -->
-        <div class="slide-menu-overlay"></div>
-        <!-- Menu content: The actual menu items -->
-        <div class="slide-menu-content">
-            <!-- Close button for the mobile menu -->
-            <button class="menu-close" aria-label="Close navigation menu">
-                <!-- X icon made with SVG -->
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <!-- This draws an X shape -->
-                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <!-- Mobile menu button: Only shows on small screens -->
+            <!-- aria-controls tells screen readers what this button controls -->
+            <!-- aria-expanded="false" indicates the menu starts closed -->
+            <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false"
+                    aria-label="Open navigation menu">
+                <span class="menu-text">Menu</span>
+                <!-- SVG is a type of image made with code - this draws a hamburger menu icon -->
+                <!-- aria-hidden="true" tells screen readers to ignore this decorative icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <!-- This draws three horizontal lines for the hamburger menu -->
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </button>
-            <!-- List of navigation links -->
-            <ul class="menu-links">
-                <!-- Each li (list item) contains a navigation link -->
-                <li><a href="/index.html" class="menu-link">Home</a></li>
-                <li><a href="/projects.html" class="menu-link">Projects</a></li>
-                <li><a href="/about.html" class="menu-link">About</a></li>
-                <!-- aria-current="page" tells screen readers this is the current page -->
-                <li><a href="/concept-art.html" class="menu-link" aria-current="page">Concept Art</a></li>
-                <li><a href="/showreel.html" class="menu-link">Showreels</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main content area: Contains all the page-specific content -->
-    <main>
-        <!-- Page header: The title and description at the top -->
-        <section class="page-header">
-            <div class="container">
-                <!-- Main page title -->
-                <h1 class="page-title">Concept Art</h1>
-                <!-- Brief description of what's on this page -->
-                <p class="page-intro">A collection of concept art pieces showcasing creative exploration across various projects. Each piece represents a unique approach to visual storytelling and design development.</p>
-            </div>
-        </section>
-
-        <!-- Gallery section: Contains all the concept art pieces -->
-        <section class="gallery-section">
-            <div class="container">
-                <!-- Gallery grid: This arranges the art pieces in a responsive grid -->
-                <div class="gallery">
-
-                    <!-- Note: These are temporary SVG placeholders – replace src with final images when ready -->
-
-                    <!-- Art Item 1: Each art piece is wrapped in an article tag -->
-                    <!-- article tag represents a complete, independent piece of content -->
-                    <article class="art-item">
-                        <!-- figure tag groups an image with its caption -->
-                        <figure class="art-media">
-                            <!-- The actual artwork image -->
-                            <!-- class="art-thumb" is used by JavaScript to detect clickable images -->
-                            <!-- loading="lazy" means the image only loads when it's about to be seen (saves bandwidth) -->
-                            <!-- decoding="async" improves page performance -->
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-01.svg"
-                                 alt="Fantasy landscape concept featuring mystical mountains and ethereal lighting"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <!-- Text information about the artwork -->
-                        <div class="art-meta">
-                            <!-- Artwork title -->
-                            <h3>Mystic Peaks</h3>
-                            <!-- Description of the artwork -->
-                            <p>An atmospheric landscape concept exploring otherworldly terrain and dramatic lighting effects. This piece focuses on creating depth through layered mountains and mystical fog elements.</p>
-                            <!-- Technical details about the artwork -->
-                            <ul class="art-facts">
-                                <li>Year: 2025</li>
-                                <li>Tools: Procreate / Photoshop</li>
-                                <li>Dimensions: 3000 × 2000 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 2 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-02.svg"
-                                 alt="Futuristic cityscape with towering architecture and neon lighting"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Neo-Tokyo Dreams</h3>
-                            <p>A cyberpunk-inspired urban environment showcasing advanced architecture and atmospheric lighting. The design emphasizes vertical scale and technological integration within city planning.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2024</li>
-                                <li>Tools: Blender / Photoshop</li>
-                                <li>Dimensions: 4000 × 2250 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 3 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-03.svg"
-                                 alt="Character design featuring a mystical forest guardian with intricate details"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Forest Guardian</h3>
-                            <p>Character concept design for a nature-based fantasy setting. This piece explores organic forms, natural textures, and the integration of flora within character design elements.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2024</li>
-                                <li>Tools: Procreate / Clip Studio Paint</li>
-                                <li>Dimensions: 2500 × 3500 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 4 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-04.svg"
-                                 alt="Steampunk airship design with mechanical details and brass elements"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Skybound Vessel</h3>
-                            <p>Steampunk vehicle design combining Victorian aesthetics with fantastical engineering. The concept explores brass mechanics, steam propulsion, and ornate decorative elements.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2024</li>
-                                <li>Tools: Photoshop / KeyShot</li>
-                                <li>Dimensions: 3500 × 2000 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 5 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-05.svg"
-                                 alt="Underwater ruins with bioluminescent creatures and ancient architecture"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Abyssal Sanctuary</h3>
-                            <p>An underwater environment concept featuring sunken ruins and bioluminescent marine life. This piece explores underwater lighting effects and the interplay between nature and ancient architecture.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2024</li>
-                                <li>Tools: Photoshop / ZBrush</li>
-                                <li>Dimensions: 4000 × 2667 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 6 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-06.svg"
-                                 alt="Space station interior with sleek technology and atmospheric lighting"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Orbital Haven</h3>
-                            <p>Interior design concept for a futuristic space station focusing on functional aesthetics and advanced technology integration. The design emphasizes clean lines and atmospheric mood lighting.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2025</li>
-                                <li>Tools: Blender / Substance Painter</li>
-                                <li>Dimensions: 3840 × 2160 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 7 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-07.svg"
-                                 alt="Medieval town square with market stalls and period architecture"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Market Day</h3>
-                            <p>Historical environment concept depicting a bustling medieval marketplace. This piece focuses on period-accurate architecture, atmospheric perspective, and storytelling through environmental details.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2024</li>
-                                <li>Tools: Photoshop / 3ds Max</li>
-                                <li>Dimensions: 3200 × 2400 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 8 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-08.svg"
-                                 alt="Alien creature design with unique anatomical features and textures"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Xenomorph Study</h3>
-                            <p>Creature design exploration featuring alien anatomy and biomechanical elements. The concept investigates non-terrestrial evolution and unique structural adaptations for an extraterrestrial environment.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2025</li>
-                                <li>Tools: ZBrush / Procreate</li>
-                                <li>Dimensions: 2800 × 4000 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 9 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-09.svg"
-                                 alt="Post-apocalyptic vehicle design with salvaged parts and weathered details"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Wasteland Runner</h3>
-                            <p>Vehicle concept for a post-apocalyptic setting emphasizing improvised construction and weathered materials. The design showcases survival engineering and adaptive modifications for harsh environments.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2024</li>
-                                <li>Tools: Photoshop / Maya</li>
-                                <li>Dimensions: 4000 × 2000 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Art Item 10 -->
-                    <article class="art-item">
-                        <figure class="art-media">
-                            <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-10.svg"
-                                 alt="Magical academy interior with floating books and mystical elements"
-                                 loading="lazy"
-                                 decoding="async">
-                        </figure>
-                        <div class="art-meta">
-                            <h3>Arcane Library</h3>
-                            <p>Interior environment concept for a magical academy library featuring floating tomes and enchanted architectural elements. The design explores the intersection of classical library design with fantastical magical elements.</p>
-                            <ul class="art-facts">
-                                <li>Year: 2025</li>
-                                <li>Tools: Photoshop / Procreate</li>
-                                <li>Dimensions: 3600 × 2400 px</li>
-                            </ul>
-                        </div>
-                    </article>
-
-                </div> <!-- End of gallery -->
-            </div> <!-- End of container -->
-        </section> <!-- End of gallery-section -->
-    </main>
-
-    <!-- Lightbox: This is a popup that shows larger versions of images when clicked -->
-    <!-- It starts hidden and only appears when an image is clicked -->
-    <!-- aria-hidden="true" tells screen readers to ignore it when it's closed -->
-    <div id="lightbox" class="lightbox" aria-hidden="true">
-        <!-- Overlay: The dark background behind the popup -->
-        <!-- data-lightbox-close means clicking here will close the lightbox -->
-        <div class="lightbox__overlay" data-lightbox-close></div>
-        <!-- Content: The actual popup box -->
-        <!-- role="document" tells screen readers this is a distinct document -->
-        <div class="lightbox__content" role="document">
-            <!-- Close button with an X symbol -->
-            <!-- &times; creates the × symbol -->
-            <button class="lightbox__close" type="button" aria-label="Close image" data-lightbox-close>&times;</button>
-            <!-- The large version of the clicked image will appear here -->
-            <img class="lightbox__img" alt="">
-            <!-- Caption showing the image description -->
-            <p class="lightbox__caption" id="lightbox-caption"></p>
         </div>
     </div>
+</header>
 
-    <!-- Footer: Copyright information at the bottom -->
-    <!-- role="contentinfo" tells screen readers this is footer information -->
-    <footer class="contact-footer" role="contentinfo">
+<!-- Navigation menu: This slides out on mobile devices -->
+<!-- role="navigation" tells screen readers this is for navigation -->
+<!-- aria-hidden="true" means it starts hidden -->
+<nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
+    <!-- Overlay: The dark background behind the menu -->
+    <div class="slide-menu-overlay"></div>
+    <!-- Menu content: The actual menu items -->
+    <div class="slide-menu-content">
+        <!-- Close button for the mobile menu -->
+        <button class="menu-close" aria-label="Close navigation menu">
+            <!-- X icon made with SVG -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <!-- This draws an X shape -->
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <!-- List of navigation links -->
+        <ul class="menu-links">
+            <!-- Each li (list item) contains a navigation link -->
+            <li><a href="/index.html" class="menu-link">Home</a></li>
+            <li><a href="/projects.html" class="menu-link">Projects</a></li>
+            <li><a href="/about.html" class="menu-link">About</a></li>
+            <!-- aria-current="page" tells screen readers this is the current page -->
+            <li><a href="/concept-art.html" class="menu-link" aria-current="page">Concept Art</a></li>
+            <li><a href="/showreel.html" class="menu-link">Showreels</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main content area: Contains all the page-specific content -->
+<main>
+    <!-- Page header: The title and description at the top -->
+    <section class="page-header">
         <div class="container">
-            <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
+            <!-- Main page title -->
+            <h1 class="page-title">Concept Art</h1>
+            <!-- Brief description of what's on this page -->
+            <p class="page-intro">A collection of concept art pieces showcasing creative exploration across various
+                projects. Each piece represents a unique approach to visual storytelling and design development.</p>
         </div>
-    </footer>
+    </section>
 
-    <!-- JavaScript files: These add interactive functionality -->
-    <!-- header.js handles the mobile menu opening/closing -->
-    <script src="/assets/js/header.js"></script>
-    <!-- lightbox.js handles clicking on images to open them in a popup -->
-    <script src="/assets/js/lightbox.js"></script>
+    <!-- Gallery section: Contains all the concept art pieces -->
+    <section class="gallery-section">
+        <div class="container">
+            <!-- Gallery grid: This arranges the art pieces in a responsive grid -->
+            <div class="gallery">
+
+                <!-- Note: These are temporary SVG placeholders – replace src with final images when ready -->
+
+                <!-- Art Item 1: Each art piece is wrapped in an article tag -->
+                <!-- article tag represents a complete, independent piece of content -->
+                <article class="art-item">
+                    <!-- figure tag groups an image with its caption -->
+                    <figure class="art-media">
+                        <!-- The actual artwork image -->
+                        <!-- class="art-thumb" is used by JavaScript to detect clickable images -->
+                        <!-- loading="lazy" means the image only loads when it's about to be seen (saves bandwidth) -->
+                        <!-- decoding="async" improves page performance -->
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-01.svg"
+                             alt="Fantasy landscape concept featuring mystical mountains and ethereal lighting"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <!-- Text information about the artwork -->
+                    <div class="art-meta">
+                        <!-- Artwork title -->
+                        <h3>Mystic Peaks</h3>
+                        <!-- Description of the artwork -->
+                        <p>An atmospheric landscape concept exploring otherworldly terrain and dramatic lighting
+                            effects. This piece focuses on creating depth through layered mountains and mystical fog
+                            elements.</p>
+                        <!-- Technical details about the artwork -->
+                        <ul class="art-facts">
+                            <li>Year: 2025</li>
+                            <li>Tools: Procreate / Photoshop</li>
+                            <li>Dimensions: 3000 × 2000 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 2 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-02.svg"
+                             alt="Futuristic cityscape with towering architecture and neon lighting"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Neo-Tokyo Dreams</h3>
+                        <p>A cyberpunk-inspired urban environment showcasing advanced architecture and atmospheric
+                            lighting. The design emphasizes vertical scale and technological integration within city
+                            planning.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2024</li>
+                            <li>Tools: Blender / Photoshop</li>
+                            <li>Dimensions: 4000 × 2250 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 3 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-03.svg"
+                             alt="Character design featuring a mystical forest guardian with intricate details"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Forest Guardian</h3>
+                        <p>Character concept design for a nature-based fantasy setting. This piece explores organic
+                            forms, natural textures, and the integration of flora within character design elements.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2024</li>
+                            <li>Tools: Procreate / Clip Studio Paint</li>
+                            <li>Dimensions: 2500 × 3500 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 4 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-04.svg"
+                             alt="Steampunk airship design with mechanical details and brass elements"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Skybound Vessel</h3>
+                        <p>Steampunk vehicle design combining Victorian aesthetics with fantastical engineering. The
+                            concept explores brass mechanics, steam propulsion, and ornate decorative elements.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2024</li>
+                            <li>Tools: Photoshop / KeyShot</li>
+                            <li>Dimensions: 3500 × 2000 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 5 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-05.svg"
+                             alt="Underwater ruins with bioluminescent creatures and ancient architecture"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Abyssal Sanctuary</h3>
+                        <p>An underwater environment concept featuring sunken ruins and bioluminescent marine life. This
+                            piece explores underwater lighting effects and the interplay between nature and ancient
+                            architecture.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2024</li>
+                            <li>Tools: Photoshop / ZBrush</li>
+                            <li>Dimensions: 4000 × 2667 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 6 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-06.svg"
+                             alt="Space station interior with sleek technology and atmospheric lighting"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Orbital Haven</h3>
+                        <p>Interior design concept for a futuristic space station focusing on functional aesthetics and
+                            advanced technology integration. The design emphasizes clean lines and atmospheric mood
+                            lighting.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2025</li>
+                            <li>Tools: Blender / Substance Painter</li>
+                            <li>Dimensions: 3840 × 2160 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 7 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-07.svg"
+                             alt="Medieval town square with market stalls and period architecture"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Market Day</h3>
+                        <p>Historical environment concept depicting a bustling medieval marketplace. This piece focuses
+                            on period-accurate architecture, atmospheric perspective, and storytelling through
+                            environmental details.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2024</li>
+                            <li>Tools: Photoshop / 3ds Max</li>
+                            <li>Dimensions: 3200 × 2400 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 8 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-08.svg"
+                             alt="Alien creature design with unique anatomical features and textures"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Xenomorph Study</h3>
+                        <p>Creature design exploration featuring alien anatomy and biomechanical elements. The concept
+                            investigates non-terrestrial evolution and unique structural adaptations for an
+                            extraterrestrial environment.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2025</li>
+                            <li>Tools: ZBrush / Procreate</li>
+                            <li>Dimensions: 2800 × 4000 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 9 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-09.svg"
+                             alt="Post-apocalyptic vehicle design with salvaged parts and weathered details"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Wasteland Runner</h3>
+                        <p>Vehicle concept for a post-apocalyptic setting emphasizing improvised construction and
+                            weathered materials. The design showcases survival engineering and adaptive modifications
+                            for harsh environments.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2024</li>
+                            <li>Tools: Photoshop / Maya</li>
+                            <li>Dimensions: 4000 × 2000 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Art Item 10 -->
+                <article class="art-item">
+                    <figure class="art-media">
+                        <img class="art-thumb" src="/assets/images/concept-art-images/placeholder-10.svg"
+                             alt="Magical academy interior with floating books and mystical elements"
+                             loading="lazy"
+                             decoding="async">
+                    </figure>
+                    <div class="art-meta">
+                        <h3>Arcane Library</h3>
+                        <p>Interior environment concept for a magical academy library featuring floating tomes and
+                            enchanted architectural elements. The design explores the intersection of classical library
+                            design with fantastical magical elements.</p>
+                        <ul class="art-facts">
+                            <li>Year: 2025</li>
+                            <li>Tools: Photoshop / Procreate</li>
+                            <li>Dimensions: 3600 × 2400 px</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div> <!-- End of gallery -->
+        </div> <!-- End of container -->
+    </section> <!-- End of gallery-section -->
+</main>
+
+<!-- Lightbox: This is a popup that shows larger versions of images when clicked -->
+<!-- It starts hidden and only appears when an image is clicked -->
+<!-- aria-hidden="true" tells screen readers to ignore it when it's closed -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+    <!-- Overlay: The dark background behind the popup -->
+    <!-- data-lightbox-close means clicking here will close the lightbox -->
+    <div class="lightbox__overlay" data-lightbox-close></div>
+    <!-- Content: The actual popup box -->
+    <!-- role="document" tells screen readers this is a distinct document -->
+    <div class="lightbox__content" role="document">
+        <!-- Close button with an X symbol -->
+        <!-- &times; creates the × symbol -->
+        <button class="lightbox__close" type="button" aria-label="Close image" data-lightbox-close>&times;</button>
+        <!-- The large version of the clicked image will appear here -->
+        <img class="lightbox__img" alt="">
+        <!-- Caption showing the image description -->
+        <p class="lightbox__caption" id="lightbox-caption"></p>
+    </div>
+</div>
+
+<!-- Footer Contact Section -->
+<footer id="contact" class="contact-footer" role="contentinfo">
+    <div class="container">
+        <h2 class="contact-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>Email: <a href="mailto:katelyn@katelynlydia.com" class="contact-link">katelyn@katelynlydia.com</a>
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">Instagram</a>
+                <a href="https://artstation.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">ArtStation</a>
+                <a href="https://youtube.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">YouTube</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript files: These add interactive functionality -->
+<!-- header.js handles the mobile menu opening/closing -->
+<script src="/assets/js/header.js"></script>
+<!-- lightbox.js handles clicking on images to open them in a popup -->
+<script src="/assets/js/lightbox.js"></script>
+<!-- footer-loader.js loads footer content dynamically -->
+<script src="/assets/js/footer-loader.js" defer></script>
 </body>
 </html>

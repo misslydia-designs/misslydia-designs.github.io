@@ -1,0 +1,306 @@
+/*
+=== CONCEPT ART GALLERY STYLES ===
+Responsive gallery layout for concept art pieces
+Mobile-first: stacked layout → desktop: side-by-side image/text
+*/
+
+/* Page Header for Concept Art page */
+.page-header {
+    padding: var(--space-xl) 0 var(--space-lg);
+    background-color: var(--white);
+    text-align: center;
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--leaf-dark);
+    margin-bottom: var(--space-md);
+}
+
+.page-intro {
+    font-size: var(--text-lg);
+    color: var(--leaf-dark);
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Section spacing */
+.gallery-section {
+    padding: var(--space-lg) 0 var(--space-xl);
+}
+
+/* Grid spacing: Controls how gallery items are arranged */
+.gallery {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+/* On tablets and larger screens, increase the gap slightly */
+@media (min-width: 768px) {
+    .gallery {
+        gap: calc(var(--space-xl) + 8px);
+    }
+}
+
+/* Card layout: Each individual art piece container */
+.art-item {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "image"
+    "meta";
+    align-items: stretch;
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(63, 110, 58, 0.08);
+    transition: transform .3s ease, box-shadow .3s ease;
+    overflow: visible;
+}
+
+/* On tablets and larger screens, arrange image and text side by side */
+@media (min-width: 768px) {
+    .art-item {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "image meta";
+    }
+}
+
+/* Hover effect: Lifts the card slightly when mouse is over it */
+.art-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(63, 110, 58, 0.12);
+}
+
+/* Image container: Controls how artwork images are displayed */
+.art-media {
+    grid-area: image;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    box-sizing: border-box;
+    background: var(--sand);
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+    height: clamp(220px, 36vw, 460px);
+}
+
+/* Images and SVGs: Controls how the actual artwork appears */
+.art-media > img,
+.art-media > svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill !important;
+    aspect-ratio: auto;
+    display: block;
+    -webkit-user-drag: none;
+    overflow: hidden;
+}
+
+/* Text panel: Contains the artwork title, description, and details */
+.art-meta {
+    grid-area: meta;
+    background: var(--sand);
+    border-radius: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* On tablets and larger screens, increase the padding */
+@media (min-width: 768px) {
+    .art-meta {
+        padding: 24px;
+    }
+}
+
+.art-meta h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--leaf-dark);
+    margin-bottom: var(--space-sm);
+    line-height: 1.3;
+}
+
+.art-meta p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    color: var(--leaf-dark);
+    opacity: 0.9;
+}
+
+/* Art Facts List: Technical details like year, tools, dimensions */
+.art-facts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+/* Individual fact items */
+.art-facts li {
+    font-size: var(--text-sm);
+    color: var(--leaf-dark);
+    font-weight: 500;
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid rgba(63, 110, 58, 0.15);
+}
+
+/* Remove border from the last item */
+.art-facts li:last-child {
+    border-bottom: none;
+}
+
+/* Tablet layout: Arrange facts horizontally instead of vertically */
+@media (min-width: 480px) {
+    .art-facts {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+
+    .art-facts li {
+        border-bottom: none;
+        border-right: 1px solid rgba(63, 110, 58, 0.15);
+        padding-right: var(--space-sm);
+        margin-right: var(--space-sm);
+    }
+
+    .art-facts li:last-child {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
+
+/* Very small phone adjustments */
+@media (max-width: 359px) {
+    .art-media {
+        height: clamp(180px, 45vw, 320px);
+    }
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .art-item {
+        transition: none;
+    }
+
+    .art-item:hover {
+        transform: none;
+        box-shadow: 0 4px 20px rgba(63, 110, 58, 0.08);
+    }
+}
+
+/* Accessibility: Keyboard navigation focus indicator */
+.art-item:focus-within {
+    outline: 3px solid var(--berry);
+    outline-offset: 4px;
+}
+
+/* ===== IMAGE LIGHTBOX STYLES ===== */
+/* These styles control the popup that appears when clicking on images */
+
+/* Hide lightbox when aria-hidden is true */
+.lightbox[aria-hidden="true"] {
+    display: none;
+}
+
+/* Main lightbox container: Covers the entire screen */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: grid;
+    place-items: center;
+}
+
+/* Dark overlay behind the lightbox content */
+.lightbox__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* The actual lightbox content box */
+.lightbox__content {
+    position: relative;
+    max-width: min(1200px, 95vw);
+    max-height: 90vh;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 8px;
+}
+
+/* The large image inside the lightbox */
+.lightbox__img {
+    width: 100%;
+    height: 100%;
+    max-height: 75vh;
+    object-fit: fill;
+    display: block;
+    background: var(--sand);
+    border-radius: 8px;
+}
+
+/* Caption text below the image */
+.lightbox__caption {
+    margin: 0;
+    font: 500 var(--text-sm)/1.5 var(--font-body);
+    color: var(--leaf-dark);
+    padding: 4px 2px 0;
+    text-align: center;
+}
+
+/* Close button (X) in the top-right corner */
+.lightbox__close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--sand);
+    background: var(--leaf-dark);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+
+/* Hover effect: Slightly enlarge the close button */
+.lightbox__close:hover {
+    transform: scale(1.06);
+}
+
+/* Focus effect for keyboard navigation */
+.lightbox__close:focus-visible {
+    outline: 3px solid var(--berry);
+    outline-offset: 2px;
+}
+
+/* Prevent background scrolling when lightbox is open */
+/* This class is added to the html element by JavaScript */
+.no-scroll {
+    overflow: hidden !important;
+}

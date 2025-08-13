@@ -1,0 +1,256 @@
+/* ===== ABOUT PAGE STYLES (Final Layout) ===== */
+/* Layout:
+   Row 1:  [ Profile Photo ] [ Quick Info ]
+   Row 2:  [ Skills        ] [ About Me   ]
+   Row 3:  [       Resume (center/full)   ]
+*/
+
+/* Main about section container */
+.about-section {
+    padding: var(--space-3xl) 0;
+    background: var(--white);
+}
+
+/* Grid container */
+.about-grid {
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: 1fr; /* mobile: 1 column */
+    grid-template-areas:
+    "photo"
+    "info"
+    "skills"
+    "about"
+    "cv";
+}
+
+/* Desktop/tablet: 2 even columns, specified areas */
+@media (min-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr; /* evenly split columns */
+        gap: var(--space-2xl);
+        grid-template-areas:
+      "photo  info"
+      "skills about"
+      "cv     cv";
+        align-items: start;
+    }
+}
+
+/* Shared card styling */
+.about-card {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(63, 110, 58, 0.08);
+    padding: var(--space-lg);
+    border: 1px solid rgba(63, 110, 58, 0.05);
+}
+
+/* AREA ASSIGNMENTS (add these classes to the right cards in HTML) */
+.about-photo-card {
+    grid-area: photo;
+}
+
+/* Profile picture card */
+.card--info {
+    grid-area: info;
+}
+
+/* Quick Info card */
+.card--skills {
+    grid-area: skills;
+}
+
+/* Skills card */
+.card--about {
+    grid-area: about;
+}
+
+/* About Me card */
+.card--cv {
+    grid-area: cv;
+}
+
+/* Resume card */
+
+/* Center the Resume card content a bit nicer */
+.card--cv {
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+/* Profile photo card specifics */
+.about-photo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+}
+
+/* Photo container (if you use <figure class="photo-container">) */
+.photo-container {
+    width: 100%;
+    max-width: 320px; /* keep a sensible max on large screens */
+    margin: 0;
+}
+
+/* Profile photo: full image, never distorted */
+.profile-photo {
+    width: 100%;
+    height: auto; /* preserve natural aspect ratio */
+    object-fit: contain; /* show the entire image, no cropping/distortion */
+    display: block;
+    border-radius: 12px;
+    background: var(--sand); /* subtle backing if aspect leaves bars */
+}
+
+/* Card titles */
+.card-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--leaf-dark);
+    margin: 0 0 var(--space-md);
+    line-height: 1.3;
+}
+
+/* Quick Info grid */
+.info-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: 1fr; /* mobile: 1 column */
+}
+
+@media (min-width: 480px) {
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* 2 columns on small tablets+ */
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.info-label {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--leaf-dark);
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info-value {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--leaf-dark);
+}
+
+.info-link {
+    color: var(--leaf-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.info-link:hover,
+.info-link:focus {
+    color: var(--berry);
+    text-decoration: underline;
+}
+
+.info-link:focus-visible {
+    outline: 2px solid var(--berry);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* About description */
+.about-description {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--leaf-dark);
+    margin: 0;
+}
+
+/* Skills */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.skill-chip {
+    background: var(--sand);
+    color: var(--leaf-dark);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 20px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.skill-chip:hover,
+.skill-chip:focus {
+    background: var(--leaf-light);
+    border-color: var(--leaf-dark);
+    transform: translateY(-1px);
+}
+
+/* CV download button */
+.cv-download {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--leaf-dark);
+    color: var(--white);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid var(--leaf-dark);
+    min-height: 44px;
+    justify-content: center;
+}
+
+.cv-download:hover {
+    background: var(--berry);
+    border-color: var(--berry);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122, 14, 43, 0.3);
+}
+
+.cv-download:focus-visible {
+    outline: 3px solid var(--berry);
+    outline-offset: 2px;
+}
+
+.download-icon {
+    font-size: var(--text-lg);
+    line-height: 1;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .skill-chip, .cv-download, .info-link {
+        transition: none;
+    }
+
+    .skill-chip:hover, .cv-download:hover {
+        transform: none;
+    }
+}

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>About - Katelyn Lydia</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap"
+          rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/about-style.css"/>
+    <link rel="icon" type="image/png" href="/assets/images/logo.png"/>
 </head>
 <body>
 <!-- Consistent Site Header -->
@@ -18,15 +20,16 @@
         <div class="header-content">
             <div class="logo-section">
                 <a href="index.html" class="logo-link">
-                    <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo" />
+                    <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo"/>
                     <h1 class="site-name">Katelyn Lydia</h1>
                 </a>
             </div>
 
-            <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false" aria-label="Open navigation menu">
+            <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false"
+                    aria-label="Open navigation menu">
                 <span class="menu-text">Menu</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </button>
         </div>
@@ -39,7 +42,7 @@
     <div class="slide-menu-content">
         <button class="menu-close" aria-label="Close navigation menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
         </button>
         <ul class="menu-links">
@@ -82,7 +85,8 @@
                         </div>
                         <div class="info-item">
                             <span class="info-label">Email</span>
-                            <a href="mailto:hello@katelynlydia.com" class="info-value info-link">hello@katelynlydia.com</a>
+                            <a href="mailto:hello@katelynlydia.com"
+                               class="info-value info-link">hello@katelynlydia.com</a>
                         </div>
                         <div class="info-item">
                             <span class="info-label">Phone</span>
@@ -116,8 +120,10 @@
                 <section class="about-card card--about">
                     <h2 class="card-title">About Me</h2>
                     <p class="about-description">
-                        I'm a concept artist with a love for building worlds—characters, creatures, and environments that feel alive.
-                        I mix traditional thumbnails with digital paintovers to focus on storytelling and mood. Current tools:
+                        I'm a concept artist with a love for building worlds—characters, creatures, and environments
+                        that feel alive.
+                        I mix traditional thumbnails with digital paintovers to focus on storytelling and mood. Current
+                        tools:
                         Procreate, Photoshop, Blender.
                     </p>
                 </section>
@@ -140,12 +146,31 @@
     </section>
 </main>
 
-<footer class="contact-footer" role="contentinfo">
+<!-- Footer Contact Section -->
+<footer id="contact" class="contact-footer" role="contentinfo">
     <div class="container">
+        <h2 class="contact-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>Email: <a href="mailto:katelyn@katelynlydia.com" class="contact-link">katelyn@katelynlydia.com</a>
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">Instagram</a>
+                <a href="https://artstation.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">ArtStation</a>
+                <a href="https://youtube.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">YouTube</a>
+            </div>
+        </div>
         <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
     </div>
 </footer>
 
+<script src="/assets/js/footer-loader.js"></script>
+
 <script src="assets/js/header.js"></script>
+<script src="assets/js/footer-loader.js" defer></script>
 </body>
 </html>

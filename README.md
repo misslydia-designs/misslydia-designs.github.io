@@ -1,17 +1,21 @@
 # 🎨 Katelyn Lydia Portfolio Website
 
-A modern, responsive portfolio website for concept artist Katelyn Lydia, featuring automated project management, interactive galleries, and accessibility-first design.
+A modern, responsive portfolio website for concept artist Katelyn Lydia, featuring automated project management,
+interactive galleries, and accessibility-first design.
 
 ## 📖 Overview
 
-This portfolio website showcases Katelyn Lydia's work as a concept artist, featuring her projects, concept art gallery, showreels, and professional information. The site is built with vanilla HTML, CSS, and JavaScript, emphasizing performance, accessibility, and maintainability. 
+This portfolio website showcases Katelyn Lydia's work as a concept artist, featuring her projects, concept art gallery,
+showreels, and professional information. The site is built with vanilla HTML, CSS, and JavaScript, emphasizing
+performance, accessibility, and maintainability.
 
-A key feature is the automated project management system that dynamically generates project cards by scanning HTML files and matching them with thumbnail images, eliminating the need for manual content updates.
+A key feature is the automated project management system that dynamically generates project cards by scanning HTML files
+and matching them with thumbnail images, eliminating the need for manual content updates.
 
 ## 📚 Table of Contents
 
 - [🚀 Features](#-features)
-- [🛠 Tech Stack](#-tech-stack)  
+- [🛠 Tech Stack](#-tech-stack)
 - [📂 Project Structure](#-project-structure)
 - [⚙️ Installation & Setup](#️-installation--setup)
 - [📜 Usage](#-usage)
@@ -38,16 +42,19 @@ A key feature is the automated project management system that dynamically genera
 ## 🛠 Tech Stack
 
 **Frontend:**
+
 - HTML5 (Semantic markup)
 - CSS3 (Custom properties, Grid, Flexbox)
 - Vanilla JavaScript (ES6+)
 - Google Fonts (Poppins, Inter)
 
 **Build Tools:**
+
 - Node.js (for build scripts)
 - NPM (package management)
 
 **Design System:**
+
 - 4-color brand palette (`--leaf-light`, `--leaf-dark`, `--berry`, `--sand`)
 - Fluid typography and spacing with `clamp()` functions
 - Mobile-first responsive breakpoints (320px → 1440px+)
@@ -68,6 +75,7 @@ misslydia-designs.github.io/
 │   ├── 🎨 css/
 │   │   └── style.css             # Main stylesheet with design system
 │   ├── 📊 data/
+│   │   ├── footer.json    # Mobile menu functionality
 │   │   └── projects.json         # Auto-generated project manifest
 │   ├── 🖼️ images/
 │   │   ├── logo.png              # Site logo and branding
@@ -78,6 +86,7 @@ misslydia-designs.github.io/
 │   │   └── project-images/
 │   │       └── project-thumbnail-images/  # Auto-matched project thumbnails
 │   ├── ⚡ js/
+│   │   ├── footer-loader.js      # Mobile menu functionality
 │   │   ├── header.js             # Mobile menu functionality
 │   │   ├── lightbox.js           # Image lightbox for galleries
 │   │   ├── main.js               # General site functionality
@@ -98,6 +107,7 @@ misslydia-designs.github.io/
 ## ⚙️ Installation & Setup
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - A modern web browser
 - Basic text editor or IDE (VS Code recommended)
@@ -121,27 +131,28 @@ misslydia-designs.github.io/
    ```
 
 4. **Start local development server:**
-   
+
    **Option A: VS Code Live Server Extension**
-   - Install Live Server extension
-   - Right-click `index.html` → "Open with Live Server"
-   
+    - Install Live Server extension
+    - Right-click `index.html` → "Open with Live Server"
+
    **Option B: Python HTTP Server**
    ```bash
    python -m http.server 8000
    ```
-   
+
    **Option C: Node.js HTTP Server**
    ```bash
    npx http-server . -p 8000
    ```
 
 5. **Access the site:**
-   - Navigate to `http://localhost:8000` in your browser
+    - Navigate to `http://localhost:8000` in your browser
 
 ## 📜 Usage
 
 ### Viewing the Portfolio
+
 - **Homepage** (`index.html`): Hero section with portfolio overview and navigation
 - **Projects** (`projects.html`): Auto-generated grid of project cards
 - **Concept Art** (`concept-art.html`): Interactive gallery with lightbox functionality
@@ -179,11 +190,13 @@ misslydia-designs.github.io/
    ```
 
 ### Adding Concept Art
+
 1. Add artwork files to `assets/images/concept-art-images/`
 2. Update the gallery in `concept-art.html` by adding new `<article class="art-item">` blocks
 3. Include proper alt text and descriptions for accessibility
 
 ### Customizing Content
+
 - **Colors**: Modify CSS custom properties in `:root` section of `assets/css/style.css`
 - **Fonts**: Update Google Fonts links in HTML `<head>` sections
 - **Hero Image**: Replace `assets/images/hero.jpg` or update `--hero-bg-image` variable
@@ -192,7 +205,8 @@ misslydia-designs.github.io/
 
 ## 🔑 Environment Variables
 
-This project uses **no environment variables** - it's a static website that runs entirely in the browser. All configuration is done through:
+This project uses **no environment variables** - it's a static website that runs entirely in the browser. All
+configuration is done through:
 
 - **CSS Custom Properties** (in `assets/css/style.css` `:root` section)
 - **HTML Meta Tags** (for SEO and page information)
@@ -204,21 +218,24 @@ This project uses **no environment variables** - it's a static website that runs
 ### Core Architecture
 
 **HTML Structure:**
+
 - Semantic HTML5 with proper heading hierarchy and ARIA attributes
 - Consistent header/navigation across all pages with slide-out mobile menu
 - Accessibility-first markup with proper roles, labels, and focus management
 
 **CSS Design System:**
+
 - **4-Color Brand Palette**: Strict color constraints using CSS custom properties
-  - `--leaf-light` (#C6E88E): Light green for highlights
-  - `--leaf-dark` (#3F6E3A): Deep green for primary elements  
-  - `--berry` (#7A0E2B): Maroon for hover states and focus
-  - `--sand` (#EEDCA8): Pale sand for subtle backgrounds
+    - `--leaf-light` (#C6E88E): Light green for highlights
+    - `--leaf-dark` (#3F6E3A): Deep green for primary elements
+    - `--berry` (#7A0E2B): Maroon for hover states and focus
+    - `--sand` (#EEDCA8): Pale sand for subtle backgrounds
 - **Fluid Typography**: `clamp()` functions for responsive text scaling
 - **Fluid Spacing**: Responsive spacing system with consistent ratios
 - **Mobile-First**: Breakpoints start at 320px and scale to 1440px+
 
 **JavaScript Modules:**
+
 - `header.js`: Mobile menu toggle with accessibility support
 - `lightbox.js`: Image gallery with keyboard navigation and focus trapping
 - `projects-loader.js`: Dynamic project card generation from JSON data
@@ -228,18 +245,18 @@ This project uses **no environment variables** - it's a static website that runs
 ### Automated Project Management Pipeline
 
 1. **Build Script** (`tools/build-projects-manifest.mjs`):
-   - Scans `projects-collection/` directory for HTML files
-   - Extracts project titles from `<title>` tags
-   - Extracts descriptions from `<meta name="description">` tags
-   - Matches thumbnails using naming convention: `{slug}-thumbnail.{ext}`
-   - Supported thumbnail formats: `.png`, `.jpg`, `.jpeg`, `.webp`, `.svg`
-   - Generates sorted JSON manifest at `assets/data/projects.json`
+    - Scans `projects-collection/` directory for HTML files
+    - Extracts project titles from `<title>` tags
+    - Extracts descriptions from `<meta name="description">` tags
+    - Matches thumbnails using naming convention: `{slug}-thumbnail.{ext}`
+    - Supported thumbnail formats: `.png`, `.jpg`, `.jpeg`, `.webp`, `.svg`
+    - Generates sorted JSON manifest at `assets/data/projects.json`
 
 2. **Frontend Loader** (`assets/js/projects-loader.js`):
-   - Fetches project data from JSON manifest on page load
-   - Creates interactive project cards dynamically
-   - Handles loading states, error scenarios, and fallback content
-   - Maintains accessibility with proper ARIA labels and keyboard navigation
+    - Fetches project data from JSON manifest on page load
+    - Creates interactive project cards dynamically
+    - Handles loading states, error scenarios, and fallback content
+    - Maintains accessibility with proper ARIA labels and keyboard navigation
 
 ### Accessibility Features
 
@@ -264,12 +281,14 @@ This project uses **no environment variables** - it's a static website that runs
 ### Manual Testing Checklist
 
 **Responsive Design:**
+
 - [ ] Test on mobile devices (320px - 768px)
-- [ ] Test on tablets (768px - 1024px)  
+- [ ] Test on tablets (768px - 1024px)
 - [ ] Test on desktop (1024px - 1440px+)
 - [ ] Verify no horizontal scroll at any breakpoint
 
 **Accessibility:**
+
 - [ ] Navigate entire site using only keyboard (Tab, Enter, Escape)
 - [ ] Test with screen reader (NVDA, JAWS, or VoiceOver)
 - [ ] Verify all images have descriptive alt text
@@ -277,6 +296,7 @@ This project uses **no environment variables** - it's a static website that runs
 - [ ] Confirm focus indicators are visible and logical
 
 **Functionality:**
+
 - [ ] Mobile menu opens/closes correctly on all devices
 - [ ] Lightbox gallery works with mouse, keyboard, and touch
 - [ ] Video player controls function properly with captions
@@ -285,12 +305,14 @@ This project uses **no environment variables** - it's a static website that runs
 - [ ] CV download functions properly
 
 **Performance:**
+
 - [ ] Images load progressively with lazy loading
 - [ ] No JavaScript errors in browser console
 - [ ] Site loads quickly on slow connections
 - [ ] Fonts load efficiently without layout shift
 
 **Build System:**
+
 - [ ] `npm run build:projects` generates correct JSON
 - [ ] New projects appear after running build script
 - [ ] Thumbnail matching works with different file formats
@@ -337,7 +359,8 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 📄 Example Project Data Structure
 
-The automated project system generates JSON data in the following format. Each project entry contains metadata extracted from HTML files and matched thumbnail images:
+The automated project system generates JSON data in the following format. Each project entry contains metadata extracted
+from HTML files and matched thumbnail images:
 
 ```jsonc
 // Example of how this works:

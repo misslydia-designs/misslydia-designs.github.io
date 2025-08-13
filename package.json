@@ -6,7 +6,11 @@
     "build:projects": "node ./tools/build-projects-manifest.mjs"
   },
   "type": "module",
-  "keywords": ["portfolio", "design", "projects"],
+  "keywords": [
+    "portfolio",
+    "design",
+    "projects"
+  ],
   "author": "Katelyn Lydia",
   "license": "MIT"
 }

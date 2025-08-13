@@ -11,118 +11,126 @@
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index-style.css">
     <link rel="icon" type="image/png" href="/assets/images/logo.png">
 </head>
 <body>
-    <!-- Consistent Site Header -->
-    <header class="site-header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-section">
-                    <a href="index.html" class="logo-link">
-                        <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
-                        <h1 class="site-name">Katelyn Lydia</h1>
-                    </a>
-                </div>
-
-                <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false" aria-label="Open navigation menu">
-                    <span class="menu-text">Menu</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+<!-- Consistent Site Header -->
+<header class="site-header" role="banner">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-section">
+                <a href="index.html" class="logo-link">
+                    <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
+                    <h1 class="site-name">Katelyn Lydia</h1>
+                </a>
             </div>
-        </div>
-    </header>
 
-    <!-- Slide-out Menu -->
-    <nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
-        <div class="slide-menu-overlay"></div>
-        <div class="slide-menu-content">
-            <button class="menu-close" aria-label="Close navigation menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false"
+                    aria-label="Open navigation menu">
+                <span class="menu-text">Menu</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </button>
-            <ul class="menu-links">
-                <li><a href="/index.html" class="menu-link" aria-current="page">Home</a></li>
-                <li><a href="/projects.html" class="menu-link">Projects</a></li>
-                <li><a href="/about.html" class="menu-link">About</a></li>
-                <li><a href="/concept-art.html" class="menu-link">Concept Art</a></li>
-                <li><a href="/showreel.html" class="menu-link">Showreels</a></li>
-            </ul>
         </div>
-    </nav>
+    </div>
+</header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" role="banner" aria-labelledby="hero-title">
-            <div class="hero-content">
-                <h1 id="hero-title" class="hero-title">
-                    <span class="hero-name">Katelyn Lydia's</span>
-                    <span class="hero-portfolio">PORTFOLIO 2025</span>
-                </h1>
-            </div>
-        </section>
+<!-- Slide-out Menu -->
+<nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
+    <div class="slide-menu-overlay"></div>
+    <div class="slide-menu-content">
+        <button class="menu-close" aria-label="Close navigation menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <ul class="menu-links">
+            <li><a href="/index.html" class="menu-link" aria-current="page">Home</a></li>
+            <li><a href="/projects.html" class="menu-link">Projects</a></li>
+            <li><a href="/about.html" class="menu-link">About</a></li>
+            <li><a href="/concept-art.html" class="menu-link">Concept Art</a></li>
+            <li><a href="/showreel.html" class="menu-link">Showreels</a></li>
+        </ul>
+    </div>
+</nav>
 
-        <!-- Portfolio Grid Section -->
-        <section class="portfolio-grid" role="main" aria-labelledby="portfolio-heading">
-            <div class="container">
-                <h2 id="portfolio-heading" class="visually-hidden">Portfolio Categories</h2>
-                <div class="grid-wrapper">
-                    <div class="card circle-card" role="article">
-                        <div class="circle-icon" role="img" aria-label="About Me Icon">
-                            <img src="assets/images/icon-about.svg" alt="About Me" class="icon-image">
-                        </div>
-                        <a href="about.html" class="btn btn-pill" aria-current="page">About Me</a>
-                    </div>
+<main>
+    <!-- Hero Section -->
+    <section class="hero" role="banner" aria-labelledby="hero-title">
+        <div class="hero-content">
+            <h1 id="hero-title" class="hero-title">
+                <span class="hero-name">Katelyn Lydia's</span>
+                <span class="hero-portfolio">PORTFOLIO 2025</span>
+            </h1>
+        </div>
+    </section>
 
-                    <div class="card circle-card" role="article">
-                        <div class="circle-icon" role="img" aria-label="Concept Art Icon">
-                            <img src="assets/images/icon-concept.svg" alt="Concept Art" class="icon-image">
-                        </div>
-                        <a href="concept-art.html" class="btn btn-pill">Concept Art</a>
-                    </div>
-
-                    <div class="card circle-card" role="article">
-                        <div class="circle-icon" role="img" aria-label="Projects Icon">
-                            <img src="assets/images/icon-projects.svg" alt="Projects" class="icon-image">
-                        </div>
-                        <a href="projects.html" class="btn btn-pill">Projects</a>
-                    </div>
-
-                    <div class="card circle-card" role="article">
-                        <div class="circle-icon" role="img" aria-label="Showreels Icon">
-                            <img src="assets/images/icon-showreels.svg" alt="Showreels" class="icon-image">
-                        </div>
-                        <a href="showreel.html" class="btn btn-pill">Showreels</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Contact Section -->
-    <footer id="contact" class="contact-footer" role="contentinfo">
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio-grid" role="main" aria-labelledby="portfolio-heading">
         <div class="container">
-            <h2 class="contact-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>Email: <a href="mailto:katelyn@katelynlydia.com" class="contact-link">katelyn@katelynlydia.com</a></p>
+            <h2 id="portfolio-heading" class="visually-hidden">Portfolio Categories</h2>
+            <div class="grid-wrapper">
+                <div class="card circle-card" role="article">
+                    <div class="circle-icon" role="img" aria-label="About Me Icon">
+                        <img src="assets/images/icon-about.svg" alt="About Me" class="icon-image">
+                    </div>
+                    <a href="about.html" class="btn btn-pill" aria-current="page">About Me</a>
                 </div>
-                <div class="social-links">
-                    <a href="https://instagram.com/katelynlydia" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
-                    <a href="https://artstation.com/katelynlydia" target="_blank" rel="noopener noreferrer" class="social-link">ArtStation</a>
-                    <a href="https://youtube.com/katelynlydia" target="_blank" rel="noopener noreferrer" class="social-link">YouTube</a>
+
+                <div class="card circle-card" role="article">
+                    <div class="circle-icon" role="img" aria-label="Concept Art Icon">
+                        <img src="assets/images/icon-concept.svg" alt="Concept Art" class="icon-image">
+                    </div>
+                    <a href="concept-art.html" class="btn btn-pill">Concept Art</a>
+                </div>
+
+                <div class="card circle-card" role="article">
+                    <div class="circle-icon" role="img" aria-label="Projects Icon">
+                        <img src="assets/images/icon-projects.svg" alt="Projects" class="icon-image">
+                    </div>
+                    <a href="projects.html" class="btn btn-pill">Projects</a>
+                </div>
+
+                <div class="card circle-card" role="article">
+                    <div class="circle-icon" role="img" aria-label="Showreels Icon">
+                        <img src="assets/images/icon-showreels.svg" alt="Showreels" class="icon-image">
+                    </div>
+                    <a href="showreel.html" class="btn btn-pill">Showreels</a>
                 </div>
             </div>
-            <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
         </div>
-    </footer>
+    </section>
+</main>
 
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/header.js"></script>
+<!-- Footer Contact Section -->
+<footer id="contact" class="contact-footer" role="contentinfo">
+    <div class="container">
+        <h2 class="contact-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>Email: <a href="mailto:katelyn@katelynlydia.com" class="contact-link">katelyn@katelynlydia.com</a>
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">Instagram</a>
+                <a href="https://artstation.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">ArtStation</a>
+                <a href="https://youtube.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">YouTube</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="/assets/js/footer-loader.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/header.js"></script>
 </body>
 </html>

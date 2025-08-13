@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Example Project - Katelyn Lydia</title>
-    <meta name="description" content="A sample project showcasing design and development skills with modern web technologies.">
+    <meta name="description"
+          content="A sample project showcasing design and development skills with modern web technologies.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/projects-style.css">
     <link rel="icon" type="image/png" href="/assets/images/logo.png">
 </head>
 <body>
@@ -23,7 +26,8 @@
                 </a>
             </div>
 
-            <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false" aria-label="Open navigation menu">
+            <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false"
+                    aria-label="Open navigation menu">
                 <span class="menu-text">Menu</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -61,12 +65,29 @@
     </section>
 </main>
 
-<footer class="contact-footer" role="contentinfo">
+<!-- Footer Contact Section -->
+<footer id="contact" class="contact-footer" role="contentinfo">
     <div class="container">
+        <h2 class="contact-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>Email: <a href="mailto:katelyn@katelynlydia.com" class="contact-link">katelyn@katelynlydia.com</a>
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">Instagram</a>
+                <a href="https://artstation.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">ArtStation</a>
+                <a href="https://youtube.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">YouTube</a>
+            </div>
+        </div>
         <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
     </div>
 </footer>
 
+<script src="/assets/js/footer-loader.js"></script>
 <script src="/assets/js/header.js"></script>
 </body>
 </html>

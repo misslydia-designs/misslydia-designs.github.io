@@ -6,88 +6,108 @@
     <title>Projects - Katelyn Lydia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700;800&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/projects-style.css">
     <link rel="icon" type="image/png" href="/assets/images/logo.png">
 </head>
 <body>
-    <!-- Header section: Same consistent header used across all pages -->
-    <header class="site-header" role="banner">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-section">
-                    <a href="index.html" class="logo-link">
-                        <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
-                        <h1 class="site-name">Katelyn Lydia</h1>
-                    </a>
-                </div>
-
-                <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false" aria-label="Open navigation menu">
-                    <span class="menu-text">Menu</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+<!-- Header section: Same consistent header used across all pages -->
+<header class="site-header" role="banner">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo-section">
+                <a href="index.html" class="logo-link">
+                    <img src="/assets/images/logo.png" alt="Katelyn Lydia logo" class="site-logo">
+                    <h1 class="site-name">Katelyn Lydia</h1>
+                </a>
             </div>
-        </div>
-    </header>
 
-    <!-- Slide-out Menu: Mobile navigation menu -->
-    <nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
-        <div class="slide-menu-overlay"></div>
-        <div class="slide-menu-content">
-            <button class="menu-close" aria-label="Close navigation menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <button class="menu-toggle" aria-controls="slide-menu" aria-expanded="false"
+                    aria-label="Open navigation menu">
+                <span class="menu-text">Menu</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </button>
-            <ul class="menu-links">
-                <li><a href="/index.html" class="menu-link">Home</a></li>
-                <!-- aria-current="page" indicates this is the current page for screen readers -->
-                <li><a href="/projects.html" class="menu-link" aria-current="page">Projects</a></li>
-                <li><a href="/about.html" class="menu-link">About</a></li>
-                <li><a href="/concept-art.html" class="menu-link">Concept Art</a></li>
-                <li><a href="/showreel.html" class="menu-link">Showreels</a></li>
-            </ul>
         </div>
-    </nav>
+    </div>
+</header>
 
-    <!-- Main content area -->
-    <main>
-        <!-- Projects section: Contains the heading, intro text, and grid -->
-        <section class="projects-section">
-            <div class="container">
-                <!-- Page title -->
-                <h1>Projects</h1>
+<!-- Slide-out Menu: Mobile navigation menu -->
+<nav id="slide-menu" class="slide-menu" role="navigation" aria-hidden="true">
+    <div class="slide-menu-overlay"></div>
+    <div class="slide-menu-content">
+        <button class="menu-close" aria-label="Close navigation menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <ul class="menu-links">
+            <li><a href="/index.html" class="menu-link">Home</a></li>
+            <!-- aria-current="page" indicates this is the current page for screen readers -->
+            <li><a href="/projects.html" class="menu-link" aria-current="page">Projects</a></li>
+            <li><a href="/about.html" class="menu-link">About</a></li>
+            <li><a href="/concept-art.html" class="menu-link">Concept Art</a></li>
+            <li><a href="/showreel.html" class="menu-link">Showreels</a></li>
+        </ul>
+    </div>
+</nav>
 
-                <!-- Introduction text -->
-                <p class="projects-intro">
-                    A collection of design and development projects showcasing various skills and creative approaches.
-                    Each project represents a unique challenge and solution.
-                </p>
-
-                <!-- Projects grid container: This starts empty and JavaScript will fill it with project cards -->
-                <!-- aria-live="polite" tells screen readers to announce when content changes -->
-                <div id="projects-grid" class="projects-grid" aria-live="polite">
-                    <!-- JavaScript will inject project cards here automatically -->
-                    <!-- The cards are loaded from /assets/data/projects.json -->
-                    <!-- If you don't see any projects, run: npm run build:projects -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer: Copyright information -->
-    <footer class="contact-footer" role="contentinfo">
+<!-- Main content area -->
+<main>
+    <!-- Projects section: Contains the heading, intro text, and grid -->
+    <section class="projects-section">
         <div class="container">
-            <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
-        </div>
-    </footer>
+            <!-- Page title -->
+            <h1>Projects</h1>
 
-    <!-- JavaScript files: These add interactive functionality -->
-    <!-- header.js handles the mobile menu opening/closing -->
-    <script src="/assets/js/header.js"></script>
-    <!-- projects-loader.js loads the project cards from JSON data -->
-    <script src="/assets/js/projects-loader.js"></script>
+            <!-- Introduction text -->
+            <p class="projects-intro">
+                A collection of design and development projects showcasing various skills and creative approaches.
+                Each project represents a unique challenge and solution.
+            </p>
+
+            <!-- Projects grid container: This starts empty and JavaScript will fill it with project cards -->
+            <!-- aria-live="polite" tells screen readers to announce when content changes -->
+            <div id="projects-grid" class="projects-grid" aria-live="polite">
+                <!-- JavaScript will inject project cards here automatically -->
+                <!-- The cards are loaded from /assets/data/projects.json -->
+                <!-- If you don't see any projects, run: npm run build:projects -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer Contact Section -->
+<footer id="contact" class="contact-footer" role="contentinfo">
+    <div class="container">
+        <h2 class="contact-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p>Email: <a href="mailto:katelyn@katelynlydia.com" class="contact-link">katelyn@katelynlydia.com</a>
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">Instagram</a>
+                <a href="https://artstation.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">ArtStation</a>
+                <a href="https://youtube.com/katelynlydia" target="_blank" rel="noopener noreferrer"
+                   class="social-link">YouTube</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Katelyn Lydia. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript files: These add interactive functionality -->
+<!-- header.js handles the mobile menu opening/closing -->
+<script src="/assets/js/header.js"></script>
+<!-- projects-loader.js loads the project cards from JSON data -->
+<script src="/assets/js/projects-loader.js"></script>
+<!-- footer-loader.js loads footer content dynamically -->
+<script src="/assets/js/footer-loader.js" defer></script>
 </body>
 </html>

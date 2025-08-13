@@ -1,0 +1,25 @@
+{
+  "contact": {
+    "email": "katelyn@katelynlydia.com"
+  },
+  "social": [
+    {
+      "label": "Instagram",
+      "href": "https://instagram.com/katelynlydia"
+    },
+    {
+      "label": "ArtStation",
+      "href": "https://artstation.com/katelynlydia"
+    },
+    {
+      "label": "YouTube",
+      "href": "https://youtube.com/katelynlydia"
+    }
+  ],
+  "credit": {
+    "text": "Website by Matthew Derek Rall",
+    "href": "https://mattverstappen.github.io/websites-made.html",
+    "icon": "/assets/images/icons/website.svg"
+  }
+}
+
